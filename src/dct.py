@@ -12,7 +12,7 @@ import math
 def dct_dim1(data):
 	u"""1 dimension DCT.
  	@param  data:1 dimension data
- 	@return data:1 dimension data conversion by DCT
+ 	@return data:1 dimension data conversion by DCT (numpy.ndarray)
 	"""
 	N = len(data)
 	data = data.reshape(N,1)
@@ -21,10 +21,22 @@ def dct_dim1(data):
 	dct_data = dct_data.reshape(N)
 	return dct_data
 
+def idct_dim1(data):
+	u"""1 dimension DCT.
+ 	@param  data:1 dimension data
+ 	@return data:1 dimension data conversion by IDCT (numpy.ndarray)
+	"""
+	N = len(data)
+	data = data.reshape(N,1)
+	idct_matrix = _get_dctMatrix(N).T
+	idct_data = idct_matrix.dot(data)
+	idct_data = idct_data.reshape(N)
+	return idct_data
+
 def dct_dim2(data):
 	u"""2 dimension DCT.
  	@param  data:2 dimension data
- 	@return data:2 dimension data conversion by DCT
+ 	@return data:2 dimension data conversion by DCT (numpy.ndarray)
 	"""
 	height = data.shape[0]
 	width = data.shape[1]
@@ -32,8 +44,23 @@ def dct_dim2(data):
 	dct_matrix = _get_dctMatrix(height)
 	dct_data = dct_matrix.dot(data)
 	dct_matrix = _get_dctMatrix(width).T
-	dct_data = dct_data.dot(dct_matrix)	
+	dct_data = dct_data.dot(dct_matrix)
 	return dct_data
+
+def idct_dim2(data):
+	u"""2 dimension DCT.
+ 	@param  data:2 dimension data
+ 	@return data:2 dimension data conversion by IDCT (numpy.ndarray)
+	"""
+	height = data.shape[0]
+	width = data.shape[1]
+	idct_data = np.empty((height,width))
+	idct_matrix = _get_dctMatrix(height).T
+	idct_data = idct_matrix.dot(data)
+	idct_matrix = _get_dctMatrix(width)
+	idct_data = idct_data.dot(idct_matrix)
+	return idct_data
+
 
 def _get_dctMatrix(N):
 	dct_matrix = np.empty((N,N))
@@ -46,7 +73,8 @@ def _get_dctMatrix(N):
 	return dct_matrix
 
 #test
-#data = np.array([1,2,3,4])
 #data = np.array([[1,1,1,1],[2,1,2,1],[3,1,3,1],[4,1,4,1]])
-#dct_data = dct_dim2(data)
-#print(dct_data)
+#print(data)
+#dct_data  = dct_dim2(data)
+#idct_data = idct_dim2(dct_data)
+#print(idct_data)
