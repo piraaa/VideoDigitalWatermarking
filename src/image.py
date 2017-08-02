@@ -24,7 +24,7 @@ def printImage(img):
 	cv2.waitKey(0)
 	cv2.destroyAllWindows()
 
-	def rgb2ycc(img):
+def rgb2ycc(img):
 	u"""RGB to YCbCr.
 	@param  img     :3 dimension np.ndarray[Height][Width][RGB]
 	@return ycc_data:3 dimension np.ndarray[Height][Width][YCC]
