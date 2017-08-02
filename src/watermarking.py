@@ -4,13 +4,12 @@
 #
 
 #coding: utf-8
-u"""Image Watermarking"""
+u"""For image watermarking."""
 
-#using for add_lsb mode.
 TIME_DOMAIN = 1
 DCT_DOMAIN  = 0
 
-def add_lsb(cover, secret, mode=0):
+def _add_lsb(cover, secret, mode=0):
 	u"""Embed 1 bit secret information by changing LSB.
  	@param  cover :cover data
  	@param  secret:secret data (1 bit)
@@ -33,14 +32,14 @@ def add_lsb(cover, secret, mode=0):
 			stego = cover
 	return stego
 
-def check_lsb(data):
+def _check_lsb(data):
 	u"""Extract 1 bit secret information by chacking LSB.
  	@param  data   :stego data
  	@return secret :1 bit secret information
 	"""
+
 	if data%2 == 0:
 		return 0
 	elif data%2 == 1:
 		return 1
 
-def 
