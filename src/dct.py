@@ -4,7 +4,7 @@
 #
 
 #coding: utf-8
-u"""Discrete Cosine Transform"""
+u"""For Discrete Cosine Transform."""
 
 import numpy as np
 import math
@@ -71,10 +71,3 @@ def _get_dctMatrix(N):
 			else:
 				dct_matrix[k][n] = math.sqrt(2/N)*np.cos((2*n+1)*k*np.pi/(2*N))
 	return dct_matrix
-
-#test
-#data = np.array([[1,1,1,1],[2,1,2,1],[3,1,3,1],[4,1,4,1]])
-#print(data)
-#dct_data  = dct_dim2(data)
-#idct_data = idct_dim2(dct_data)
-#print(idct_data)
