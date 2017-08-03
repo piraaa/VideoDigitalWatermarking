@@ -26,7 +26,7 @@ $ git clone https://github.com/piraaa/VideoDigitalWatermarking.git
 ```
 
 ## Usage
-Put the python file in the same directory as "VideoDigitalWatermarking".  
+Put a python file in the same directory as "VideoDigitalWatermarking".  
 
 And you write only 
 ```python
