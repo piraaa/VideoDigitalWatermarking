@@ -16,7 +16,7 @@ def embed_lsb(cover, secret, interval=0):
 	u"""Embed secret informations by changing LSB.
  	@param  cover   :cover data (2 dimension np.ndarray)
  	@param  secret  :0 or 1 secret information (list)
- 	@param  interval:enbed interval
+ 	@param  interval:ebmed interval
  	@return stego   :srego data (2 dimension np.ndarray)
 	"""
 	height = cover.shape[0]
