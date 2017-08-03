@@ -52,7 +52,8 @@ def _add_lsb(cover, secret, mode=0):
  	@param  mode  :mode 0 is used for dct-domain, mode 1 is used for time-domain.(mode 1 avoids overflow that pxcel value is more than 255.)
  	@return stego :srego data
 	"""
-
+	stego = 0
+	cover = round(cover)
 	if secret == 0:
 		if cover%2 == 0:
 			stego = cover
