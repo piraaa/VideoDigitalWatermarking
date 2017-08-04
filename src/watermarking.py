@@ -74,6 +74,7 @@ def _check_lsb(data):
  	@param  data   :stego data
  	@return secret :1 bit secret information
 	"""
+	data = round(data)
 
 	if data%2 == 0:
 		return 0
