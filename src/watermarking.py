@@ -12,10 +12,11 @@ import numpy as np
 TIME_DOMAIN = 1
 DCT_DOMAIN  = 0
 
-def embed_lsb(cover, secret, interval=0):
-	u"""Embed secret informations by changing LSB.
+def embedBitReplace(cover, secret, bit=1, interval=0):
+	u"""Embed secret informations by changing bit.
  	@param  cover   :cover data (2 dimension np.ndarray)
- 	@param  secret  :0 or 1 secret information (list)
+ 	@param  secret  :0 or 1 secret information list
+ 	@param  bit     :number of replaced bit (It's recommended to be close to the LSB.)
  	@param  interval:ebmed interval
  	@return stego   :srego data (2 dimension np.ndarray)
 	"""
@@ -37,48 +38,72 @@ def embed_lsb(cover, secret, interval=0):
 	stego = cover
 
 	for i, secret_bit in enumerate(es):
-		stego[i] = _add_lsb(cover[i], secret_bit)
+		stego[i] = _addBitReplace(cover[i], secret_bit, bit)
 
 	stego = _vector2image(stego, height, width)
 
 	return stego
 
-#def extract_lsb():
-
-def _add_lsb(cover, secret, mode=0):
-	u"""Embed 1 bit secret information by changing LSB.
- 	@param  cover :cover data
- 	@param  secret:secret data (1 bit)
- 	@param  mode  :mode 0 is used for dct-domain, mode 1 is used for time-domain.(mode 1 avoids overflow that pxcel value is more than 255.)
- 	@return stego :srego data
+def extractBitReplace(cover, stego, secret_length, bit=1, interval=0):
+	u"""Extract secret informations by chacking LSB.
+ 	@param  cover        :cover data (2 dimension np.ndarray)
+ 	@param  stego        :stego data (2 dimension np.ndarray)
+ 	@param  secret_length:length of secret information
+ 	@param  bit          :number of replaced bit 
+ 	@param  interval     :embed interval
+ 	@return secret       :extracted secret information
 	"""
-	stego = 0
-	cover = round(cover)
+	secret_data = np.zeros(secret_length)
+
+	cover = _image2vrctor(cover)
+	stego = _image2vrctor(stego)
+	#data  = stego - cover
+
+	for i in np.arange(secret_length):
+		#print(stego[i*(interval+1)])
+		secret_data[i] = _checkBitReplace(stego[i*(interval+1)], bit)
+
+	return secret_data
+
+def _addBitReplace(cover, secret, bit=1):
+	u"""Embed 1 bit secret information by changing LSB.
+ 	@param  cover  :1 pixel cover data
+ 	@param  secret :i bit secret information
+ 	@param  bit    :number of replaced bit
+ 	@return stego  :1 pixel srego data
+	"""
+	stego = int(round(cover))
+	stego = format(stego, '08b')
+	stego = stego[::-1]
+
 	if secret == 0:
-		if cover%2 == 0:
-			stego = cover
-		else:
-			stego = cover + 1
-			if mode == 1:
-				if stego > 255:
-					stego -= 2
+		if stego[bit-1] == '0':
+			pass
+		elif stego[bit-1] == '1':
+			stego = stego[:(bit-1)] + '0' + stego[bit:]
 	elif secret == 1:
-		if cover%2 == 0:
-			stego = cover + 1
-		else:
-			stego = cover
+		if stego[bit-1] == '0':
+			stego = stego[:(bit-1)] + '1' + stego[bit:]
+		elif stego[bit-1] == '1':
+			pass
+
+	stego = stego[::-1]
+	stego = int(stego, 2)
 	return stego
 
-def _check_lsb(data):
+def _checkBitReplace(data, bit=1):
 	u"""Extract 1 bit secret information by chacking LSB.
  	@param  data   :stego data
+ 	@param  bit    :number of replaced bit
  	@return secret :1 bit secret information
 	"""
-	data = round(data)
+	data = int(round(data))
+	data = format(data, '08b')
+	data = data[::-1]
 
-	if data%2 == 0:
+	if data[bit-1] == '0':
 		return 0
-	elif data%2 == 1:
+	elif data[bit-1] == '1':
 		return 1
 
 def _image2vrctor(img):
@@ -105,3 +130,4 @@ def _vector2image(vector, height, width):
 		for j in np.arange(width):
 			image[i][j] = vector[i*height+j]
 	return image
+
