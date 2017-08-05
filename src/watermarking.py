@@ -14,11 +14,11 @@ DCT_DOMAIN  = 0
 
 def embedBitReplace(cover, secret, bit=1, interval=0):
 	u"""Embed secret informations by changing bit.
- 	@param  cover   :cover data (2 dimension np.ndarray)
- 	@param  secret  :0 or 1 secret information list
- 	@param  bit     :number of replaced bit (It's recommended to be close to the LSB.)
- 	@param  interval:ebmed interval
- 	@return stego   :srego data (2 dimension np.ndarray)
+	@param  cover   :cover data (2 dimension np.ndarray)
+	@param  secret  :0 or 1 secret information list
+	@param  bit     :number of replaced bit (It's recommended to be close to the LSB.)
+	@param  interval:ebmed interval
+	@return stego   :srego data (2 dimension np.ndarray)
 	"""
 	height = cover.shape[0]
 	width  = cover.shape[1]
@@ -46,12 +46,12 @@ def embedBitReplace(cover, secret, bit=1, interval=0):
 
 def extractBitReplace(cover, stego, secret_length, bit=1, interval=0):
 	u"""Extract secret informations by chacking LSB.
- 	@param  cover        :cover data (2 dimension np.ndarray)
- 	@param  stego        :stego data (2 dimension np.ndarray)
- 	@param  secret_length:length of secret information
- 	@param  bit          :number of replaced bit 
- 	@param  interval     :embed interval
- 	@return secret       :extracted secret information
+	@param  cover        :cover data (2 dimension np.ndarray)
+	@param  stego        :stego data (2 dimension np.ndarray)
+	@param  secret_length:length of secret information
+	@param  bit          :number of replaced bit 
+	@param  interval     :embed interval
+	@return secret       :extracted secret information
 	"""
 	secret_data = np.zeros(secret_length)
 
@@ -67,10 +67,10 @@ def extractBitReplace(cover, stego, secret_length, bit=1, interval=0):
 
 def _addBitReplace(cover, secret, bit=1):
 	u"""Embed 1 bit secret information by changing LSB.
- 	@param  cover  :1 pixel cover data
- 	@param  secret :i bit secret information
- 	@param  bit    :number of replaced bit
- 	@return stego  :1 pixel srego data
+	@param  cover  :1 pixel cover data
+	@param  secret :i bit secret information
+	@param  bit    :number of replaced bit
+	@return stego  :1 pixel srego data
 	"""
 	stego = int(round(cover))
 	stego = format(stego, '08b')
@@ -93,9 +93,9 @@ def _addBitReplace(cover, secret, bit=1):
 
 def _checkBitReplace(data, bit=1):
 	u"""Extract 1 bit secret information by chacking LSB.
- 	@param  data   :stego data
- 	@param  bit    :number of replaced bit
- 	@return secret :1 bit secret information
+	@param  data   :stego data
+	@param  bit    :number of replaced bit
+	@return secret :1 bit secret information
 	"""
 	data = int(round(data))
 	data = format(data, '08b')
@@ -108,8 +108,8 @@ def _checkBitReplace(data, bit=1):
 
 def _image2vrctor(img):
 	u"""Convert image to vector.
- 	@param  img   :2 dimension image data
- 	@return vector:1 dimension image data
+	@param  img   :2 dimension image data
+	@return vector:1 dimension image data
 	"""
 	height = img.shape[0]
 	width  = img.shape[1]
@@ -122,12 +122,34 @@ def _image2vrctor(img):
 
 def _vector2image(vector, height, width):
 	u"""Convert vector to image.
- 	@param  vector:1 dimension image data
- 	@return image :2 dimension image data
+	@param  vector:1 dimension image data
+	@return image :2 dimension image data
 	"""
 	image = np.empty([height, width])
 	for i in np.arange(height):
 		for j in np.arange(width):
 			image[i][j] = vector[i*height+j]
 	return image
+
+def zero2minus(zero_data):
+	u"""Convert 0 to -1.
+	@param  zero_data :secret information represented by 0 and 1.
+	@return minus_data:secret information represented by -1 and 1.
+	"""
+	minus_data = zero_data
+	for i,data in enumerate(zero_data):
+		if data == 0:
+			minus_data[i] = -1
+	return minus_data
+
+def minus2zero(minus_data):
+	u"""Convert -1 to 0.
+	@param  minus_data:secret information represented by -1 and 1.
+	@return zero_data :secret information represented by 0 and 1.
+	"""
+	zero_data = minus_data
+	for i,data in enumerate(minus_data):
+		if data == -1:
+			zero_data[i] = 0
+	return zero_data
 
