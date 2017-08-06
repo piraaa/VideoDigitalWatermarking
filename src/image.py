@@ -36,7 +36,7 @@ def writeImage(filename, img):
 	cv2.imwrite(filename, img)
 	print('Write "'+filename+'".')
 
-def printImage(img):
+def showImage(img):
 	cv2.imshow('Image', img)
 	cv2.waitKey(0)
 	cv2.destroyAllWindows()
