@@ -1,5 +1,5 @@
 .. VideoDigitalWatermarking documentation master file, created by
-   sphinx-quickstart on Sun Aug  6 15:39:28 2017.
+   sphinx-quickstart on Sun Aug  6 17:09:04 2017.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 

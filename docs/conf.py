@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # VideoDigitalWatermarking documentation build configuration file, created by
-# sphinx-quickstart on Sun Aug  6 15:39:28 2017.
+# sphinx-quickstart on Sun Aug  6 17:09:04 2017.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
