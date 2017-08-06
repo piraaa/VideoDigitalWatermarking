@@ -45,6 +45,8 @@ def video2image(filename, n=0):
 	print('Export', count, 'jpeg Images.')
 	return count
 
+def image2video()
+
 #filename = 'test.mov'
 #n = video2image(filename, )
 #print(n)
