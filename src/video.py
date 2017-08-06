@@ -10,6 +10,9 @@ import numpy as np
 import re
 import cv2
 
+def showVideo(filename):
+	pass
+
 def video2image(filename, n=0): 
 	u"""Read mpeg video and divide into jpeg images.
 	@param  filename:video filename
