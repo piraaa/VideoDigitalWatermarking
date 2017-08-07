@@ -7,7 +7,6 @@
 u"""For video processing."""
 
 import numpy as np
-import re
 import cv2
 
 def showVideo(filename):
