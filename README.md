@@ -37,7 +37,7 @@ for import.
 You can use all following functions.  
 
 ## Functions
-* Please refer to [docs](https://github.com/piraaa/VideoDigitalWatermarking).
+* Please install this library and refer to html/index.html.
 
 ## Samples
 * sample programs will be added.
