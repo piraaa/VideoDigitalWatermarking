@@ -27,7 +27,7 @@ def readGrayImage(filename):
 def readColorImage(filename):
 	u"""Read color image.
 	[notice] Grayscale images are treated as RGB image. 
-	         (ex. if pixel value is 100, it's treated [100][100][100] RGB image.)
+	(ex. if pixel value is 100, it's treated [100][100][100] RGB image.)
 	@param  filename:filename
 	@return img     :3 dimension np.ndarray[Height][Width][BGR]
 	"""
