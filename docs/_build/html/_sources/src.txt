@@ -4,6 +4,14 @@ src package
 Submodules
 ----------
 
+VideoDigitalWatermarking.src.avi module
+--------------
+
+.. automodule:: src.avi
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 src.ber module
 --------------
 
