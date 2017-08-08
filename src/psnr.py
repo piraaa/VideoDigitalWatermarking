@@ -14,7 +14,7 @@ from image import getRgbLayer
 
 def calcPSNR(cover, stego):
 	u"""Calculate PSNR.
-	@param  cover : cover inage
+	@param  cover : cover image
 	@param  stego : stego image 
 	@return psnr  : PSNR [dB]
 	"""
