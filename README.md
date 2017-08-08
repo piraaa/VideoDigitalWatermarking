@@ -49,3 +49,8 @@ Please see [LICENSE](https://github.com/piraaa/VideoDigitalWatermarking/blob/mas
 ## Library
 This program is useing [OpenCV](http://opencv.org) for input and output.  
 Please read [here](http://opencv.org/license.html) about OpenCV license.  
+
+## Other
+HTML documents were created using Sphinx.  
+* [Sphinx](http://www.sphinx-doc.org/ja/stable/#) - Sphinx HP
+* [#sphinxjp](http://sphinx-users.jp/index.html#) - Sphinx-Users community
