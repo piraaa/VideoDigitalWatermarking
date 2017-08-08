@@ -7,7 +7,7 @@ Functions will be added in the future.
 python3で画像・動画の電子透かしを行うための基本的なライブラリです．  
 今後も機能を追加していく予定です．  
 
-(Edited on 2017/08/03)
+(Edited on 2017/08/08)
 
 ## Install
 1. Install OpenCV.
@@ -37,7 +37,13 @@ for import.
 You can use all following functions.  
 
 ## Functions
-* Please install this library and refer to html/index.html.
+*
+*
+*
+*
+*
+ 
+#### For more information, please install this library and refer to "VideoDigitalWatermarking/html/index.html" with your browser.
 
 ## Samples
 * sample programs will be added.
