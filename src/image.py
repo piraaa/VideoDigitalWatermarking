@@ -6,8 +6,13 @@
 #coding: utf-8
 u"""For image processing."""
 
+import sys
 import numpy as np
 import cv2
+
+RED   = 2
+GREEN = 1
+BLUE  = 0
 
 def readGrayImage(filename):
 	u"""Read grayscale image.
@@ -22,7 +27,7 @@ def readGrayImage(filename):
 def readColorImage(filename):
 	u"""Read color image.
 	[notice] Grayscale images are treated as RGB image. 
-	         (ex. if pixel value is 100, it's treated [100][100][100] RGB image.)
+	(ex. if pixel value is 100, it's treated [100][100][100] RGB image.)
 	@param  filename:filename
 	@return img     :3 dimension np.ndarray[Height][Width][BGR]
 	"""
@@ -32,14 +37,95 @@ def readColorImage(filename):
 	print('Read "' + filename + '".')
 	return img
 
+def getRgbLayer(img, rgb=RED):
+	u"""Read grayscale image.
+	@param  img  :a 3 dimension color image like np.ndarray[Height][Width][BGR]
+	@param  rgb  :a returned layer number. Blue is 0, Green is 1 and Red is 2. You can also give a colorname like RED.  
+	@return layer:a color layer of image, only red, green or blue.
+	"""
+	height = img.shape[0]
+	width  = img.shape[1]
+	layer = np.empty([height, width])
+
+	for i in np.arange(height):
+		for j in np.arange(width):
+			layer[i][j] = img[i][j][rgb]
+
+	return layer
+
 def writeImage(filename, img):
 	cv2.imwrite(filename, img)
 	print('Write "'+filename+'".')
 
-def printImage(img):
+def showImage(img):
 	cv2.imshow('Image', img)
 	cv2.waitKey(0)
 	cv2.destroyAllWindows()
+
+def grayimage2block(img, size):
+	u"""Divide gray image into blocks.
+	@param  img   :a 2 dimension gray image like a np.array[height][width]
+	@param  size  :block size list like a [height, width]
+	@return blocks:a 4 dimension blocks like a np.ndarray[block_height][block_width][height][width]
+	"""
+	image_height = int(img.shape[0])
+	image_width  = int(img.shape[1])
+	block_height = int(size[0])
+	block_width  = int(size[1])
+
+	#print(image_height, image_width, block_height, block_width)
+
+	if image_height%block_height != 0 or image_width%block_width != 0:
+		print('Please give an appropriate bloxk size.')
+		print('You can use only numbers that are divisors of image height and width as block size.')
+		sys.exit()
+
+	row = int(image_height / block_height)
+	col = int(image_width  / block_width)
+	blocks = np.empty([row, col, block_height, block_width])
+	#print('blocks shape =', blocks.shape)
+
+	for i in np.arange(row):
+		for j in np.arange(col):
+			for k in np.arange(block_height):
+				for l in np.arange(block_width):
+					blocks[i][j][k][l] = img[i*block_height+k][j*block_width+l]
+
+	return blocks
+
+def colorimage2block(img, size):
+	u"""Divide color image into blocks.
+	@param  img   :a 3 dimension image like a np.array[height][width][BGR]
+	@param  size  :block size list like a [height, width]
+	@return blocks:a 5 dimension blocks like a np.ndarray[block_height][block_width][height][width][BGR]
+	"""
+	image_height = int(img.shape[0])
+	image_width  = int(img.shape[1])
+	block_height = int(size[0])
+	block_width  = int(size[1])
+	color_num = int(img.shape[2])
+
+	#print(image_height, image_width, block_height, block_width)
+
+	if image_height%block_height != 0 or image_width%block_width != 0:
+		print('Please give an appropriate bloxk size.')
+		print('You can use only numbers that are divisors of image height and width as block size.')
+		sys.exit()
+
+	row = int(image_height / block_height)
+	col = int(image_width  / block_width)
+	blocks = np.empty([row, col, block_height, block_width, color_num])
+	
+	#print('blocks shape =', blocks.shape)
+
+	for i in np.arange(row):
+		for j in np.arange(col):
+			for k in np.arange(block_height):
+				for l in np.arange(block_width):
+						for rgb in np.arange(color_num):
+							blocks[i][j][k][l][rgb] = img[i*block_height+k][j*block_width+l][rgb]
+
+	return blocks
 
 def rgb2ycc(img):
 	u"""RGB to YCbCr.

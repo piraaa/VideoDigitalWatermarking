@@ -7,7 +7,7 @@ Functions will be added in the future.
 python3で画像・動画の電子透かしを行うための基本的なライブラリです．  
 今後も機能を追加していく予定です．  
 
-(Edited on 2017/08/03)
+(Edited on 2017/08/08)
 
 ## Install
 1. Install OpenCV.
@@ -37,7 +37,13 @@ for import.
 You can use all following functions.  
 
 ## Functions
-* Please refer to [docs](https://github.com/piraaa/VideoDigitalWatermarking).
+*
+*
+*
+*
+*
+ 
+#### For more information, please install this library and refer to "VideoDigitalWatermarking/html/index.html" with your browser.
 
 ## Samples
 * sample programs will be added.
@@ -49,3 +55,9 @@ Please see [LICENSE](https://github.com/piraaa/VideoDigitalWatermarking/blob/mas
 ## Library
 This program is useing [OpenCV](http://opencv.org) for input and output.  
 Please read [here](http://opencv.org/license.html) about OpenCV license.  
+
+## About Sphinx
+Sphinx is a documentation tool for Python.  
+HTML documents in this library was created using Sphinx.  
+* [Sphinx](http://www.sphinx-doc.org/ja/stable/#) - Sphinx HP
+* [#sphinxjp](http://sphinx-users.jp/index.html#) - Sphinx-Users community
