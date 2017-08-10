@@ -16,12 +16,12 @@ python3で画像・動画の電子透かしを行うための基本的なライ�
 
 Use homebrew,
 
-```bash
+```bash:bash
 $ brew install opencv3 --with-python3
 ```
 
 2. Install this library.
-```bash
+```bash:bash
 $ git clone https://github.com/piraaa/VideoDigitalWatermarking.git
 ```
 
@@ -37,12 +37,25 @@ for import.
 You can use all following functions.  
 
 ## Functions
+<details><summary><strong>ber</strong> - Calculate BER(Bit Error Rate).</summary>
+
+* **calcBER(data1, data2)**
+Calculate Bit Error Rate.
+@param  data1 : result data
+@param  data2 : answer data
+@return ber: bit error rate [%].</details>
+
+<details><summary><strong>dct</strong> - For Discrete Cosine Transform.</summary>
+
+* **dct_dim1(data)**
+1 dimension DCT.
+@param  data : 1 dimension data
+@return data : 1 dimension data conversion by DCT
 *
 *
 *
-*
-*
- 
+</details>
+
 #### For more information, please install this library and refer to "VideoDigitalWatermarking/html/index.html" with your browser.
 
 ## Samples
