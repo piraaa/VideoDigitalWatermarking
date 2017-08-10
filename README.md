@@ -37,13 +37,13 @@ for import.
 You can use all following functions.  
 
 ## Functions
-<details><summary><strong>ber</strong> - Calculate BER(Bit Error Rate).</summary>
+<details><summary><strong>ber</strong> - Calculate Bit Error Rate.</summary>
 
 * **calcBER(data1, data2)**  
 Calculate Bit Error Rate.  
 @param  data1 : result data  
 @param  data2 : answer data  
-@return ber: bit error rate [%].</details>
+@return ber : bit error rate [%].</details>
 
 <details><summary><strong>dct</strong> - For Discrete Cosine Transform.</summary>
 
