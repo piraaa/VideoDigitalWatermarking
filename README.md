@@ -66,7 +66,7 @@ Calculate Bit Error Rate.
 Please see [LICENSE](https://github.com/piraaa/VideoDigitalWatermarking/blob/master/LICENSE).   
 
 ## Library
-This program is useing [OpenCV](http://opencv.org) for input and output.  
+This program is using [OpenCV](http://opencv.org) for input and output.  
 Please read [here](http://opencv.org/license.html) about OpenCV license.  
 
 ## About Sphinx
