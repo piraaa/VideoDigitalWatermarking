@@ -82,6 +82,6 @@ Please read [here](http://opencv.org/license.html) about OpenCV license.
 
 ## About Sphinx
 Sphinx is a documentation tool for Python.  
-HTML documents in this library was created using Sphinx.  
+HTML documents in this library were created using Sphinx.  
 * [Sphinx](http://www.sphinx-doc.org/ja/stable/#) - Sphinx HP
 * [#sphinxjp](http://sphinx-users.jp/index.html#) - Sphinx-Users community
