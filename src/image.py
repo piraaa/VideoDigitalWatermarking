@@ -16,8 +16,8 @@ BLUE  = 0
 
 def readGrayImage(filename):
 	u"""Read grayscale image.
-	@param  filename:filename
-	@return img     :2 dimension np.ndarray[Height][Width]
+	@param  filename : filename
+	@return img      : 2 dimension np.ndarray[Height][Width]
 	"""
 	#imread flags=0(cv2.IMREAD_GRAYSCALE):GrayScale
 	img = cv2.imread(filename, cv2.IMREAD_GRAYSCALE)
@@ -25,11 +25,9 @@ def readGrayImage(filename):
 	return img
 
 def readColorImage(filename):
-	u"""Read color image.
-	[notice] Grayscale images are treated as RGB image. 
-	(ex. if pixel value is 100, it's treated [100][100][100] RGB image.)
-	@param  filename:filename
-	@return img     :3 dimension np.ndarray[Height][Width][BGR]
+	u"""Read color image. [notice] Grayscale images are treated as RGB image. (ex. if pixel value is 100, it's treated [100][100][100] RGB image.)
+	@param  filename : filename
+	@return img      : 3 dimension np.ndarray[Height][Width][BGR]
 	"""
 	#imread flags>0(cv2.IMREAD_COLOR):3ChannelColors
 	#白黒画像でも強制的にRGBで扱ってしまう．
@@ -39,9 +37,9 @@ def readColorImage(filename):
 
 def getRgbLayer(img, rgb=RED):
 	u"""Read grayscale image.
-	@param  img  :a 3 dimension color image like np.ndarray[Height][Width][BGR]
-	@param  rgb  :a returned layer number. Blue is 0, Green is 1 and Red is 2. You can also give a colorname like RED.  
-	@return layer:a color layer of image, only red, green or blue.
+	@param  img   : a 3 dimension color image like np.ndarray[Height][Width][BGR]
+	@param  rgb   : a returned layer number. Blue is 0, Green is 1 and Red is 2. You can also give a colorname like RED.  
+	@return layer : a color layer of image, only red, green or blue.
 	"""
 	height = img.shape[0]
 	width  = img.shape[1]
@@ -54,19 +52,26 @@ def getRgbLayer(img, rgb=RED):
 	return layer
 
 def writeImage(filename, img):
+	u"""Export image data.
+	@param filename : filename for export image data
+	@param img      : 2 or 3 dimension image array
+	"""
 	cv2.imwrite(filename, img)
 	print('Write "'+filename+'".')
 
 def showImage(img):
+	u"""Show imsge data.
+	@param img : image array
+	"""
 	cv2.imshow('Image', img)
 	cv2.waitKey(0)
 	cv2.destroyAllWindows()
 
 def grayimage2block(img, size):
 	u"""Divide gray image into blocks.
-	@param  img   :a 2 dimension gray image like a np.array[height][width]
-	@param  size  :block size list like a [height, width]
-	@return blocks:a 4 dimension blocks like a np.ndarray[block_height][block_width][height][width]
+	@param  img    : a 2 dimension gray image like a np.array[height][width]
+	@param  size   : block size list like a [height, width]
+	@return blocks : a 4 dimension blocks like a np.ndarray[block_height][block_width][height][width]
 	"""
 	image_height = int(img.shape[0])
 	image_width  = int(img.shape[1])
@@ -95,9 +100,9 @@ def grayimage2block(img, size):
 
 def colorimage2block(img, size):
 	u"""Divide color image into blocks.
-	@param  img   :a 3 dimension image like a np.array[height][width][BGR]
-	@param  size  :block size list like a [height, width]
-	@return blocks:a 5 dimension blocks like a np.ndarray[block_height][block_width][height][width][BGR]
+	@param  img    : a 3 dimension image like a np.array[height][width][BGR]
+	@param  size   : block size list like a [height, width]
+	@return blocks : a 5 dimension blocks like a np.ndarray[block_height][block_width][height][width][BGR]
 	"""
 	image_height = int(img.shape[0])
 	image_width  = int(img.shape[1])
@@ -129,8 +134,8 @@ def colorimage2block(img, size):
 
 def rgb2ycc(img):
 	u"""RGB to YCbCr.
-	@param  img     :3 dimension np.ndarray[Height][Width][RGB]
-	@return ycc_data:3 dimension np.ndarray[Height][Width][YCC]
+	@param  img      : 3 dimension np.ndarray[Height][Width][RGB]
+	@return ycc_data : 3 dimension np.ndarray[Height][Width][YCC]
 	"""
 	height = img.shape[0]
 	width  = img.shape[1]
@@ -144,8 +149,8 @@ def rgb2ycc(img):
 
 def ycc2rgb(img):
 	u"""YCbCr to BGR.
-	@param  img     :3 dimension np.ndarray[Height][Width][YCC]
-	@return rgb_data:3 dimension np.ndarray[Height][Width][BGR]
+	@param  img      : 3 dimension np.ndarray[Height][Width][YCC]
+	@return rgb_data : 3 dimension np.ndarray[Height][Width][BGR]
 	"""
 	height = img.shape[0]
 	width  = img.shape[1]
@@ -159,8 +164,8 @@ def ycc2rgb(img):
 
 def get_y(img):
 	u"""Get only Y from YCC image.
-	@param  img    :3 dimension np.ndarray[Height][Width][YCC]
-	@return y_data :2 dimension np.ndarray[Height][Width]. Including only Y.
+	@param  img     : 3 dimension np.ndarray[Height][Width][YCC]
+	@return y_data  : 2 dimension np.ndarray[Height][Width]. Including only Y.
 	"""
 	height = img.shape[0]
 	width  = img.shape[1]
