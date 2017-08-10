@@ -22,7 +22,7 @@ def dct_dim1(data):
 	return dct_data
 
 def idct_dim1(data):
-	u"""1 dimension DCT.
+	u"""1 dimension IDCT.
  	@param  data : 1 dimension data
  	@return data : 1 dimension data conversion by IDCT (numpy.ndarray)
 	"""
@@ -48,7 +48,7 @@ def dct_dim2(data):
 	return dct_data
 
 def idct_dim2(data):
-	u"""2 dimension DCT.
+	u"""2 dimension IDCT.
  	@param  data : 2 dimension data
  	@return data : 2 dimension data conversion by IDCT (numpy.ndarray)
 	"""
