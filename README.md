@@ -51,10 +51,21 @@ Calculate Bit Error Rate.
 1 dimension DCT.
 @param  data : 1 dimension data
 @return data : 1 dimension data conversion by DCT
-*
-*
-*
-</details>
+
+* **idct_dim1(data)**
+1 dimension IDCT.
+@param  data : 1 dimension data
+@return data : 1 dimension data conversion by IDCT
+
+* **def dct_dim2(data)**
+dimension DCT.
+@param  data : 2 dimension data
+@return data : 2 dimension data conversion by DCT
+
+* **idct_dim2(data)**
+2 dimension IDCT.
+@param  data : 2 dimension data
+@return data : 2 dimension data conversion by IDCT</details>
 
 #### For more information, please install this library and refer to "VideoDigitalWatermarking/html/index.html" with your browser.
 
