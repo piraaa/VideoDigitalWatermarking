@@ -39,33 +39,33 @@ You can use all following functions.
 ## Functions
 <details><summary><strong>ber</strong> - Calculate BER(Bit Error Rate).</summary>
 
-* **calcBER(data1, data2)**
-Calculate Bit Error Rate.
-@param  data1 : result data
-@param  data2 : answer data
+* **calcBER(data1, data2)**  
+Calculate Bit Error Rate.  
+@param  data1 : result data  
+@param  data2 : answer data  
 @return ber: bit error rate [%].</details>
 
 <details><summary><strong>dct</strong> - For Discrete Cosine Transform.</summary>
 
-* **dct_dim1(data)**
-1 dimension DCT.
-@param  data : 1 dimension data
-@return data : 1 dimension data conversion by DCT
+* **dct_dim1(data)**  
+1 dimension DCT.  
+@param  data : 1 dimension data  
+@return data : 1 dimension data conversion by DCT  
 
-* **idct_dim1(data)**
-1 dimension IDCT.
-@param  data : 1 dimension data
-@return data : 1 dimension data conversion by IDCT
+* **idct_dim1(data)**  
+1 dimension IDCT.  
+@param  data : 1 dimension data  
+@return data : 1 dimension data conversion by IDCT  
 
-* **def dct_dim2(data)**
-dimension DCT.
-@param  data : 2 dimension data
-@return data : 2 dimension data conversion by DCT
+* **def dct_dim2(data)**  
+dimension DCT.  
+@param  data : 2 dimension data  
+@return data : 2 dimension data conversion by DCT  
 
-* **idct_dim2(data)**
-2 dimension IDCT.
-@param  data : 2 dimension data
-@return data : 2 dimension data conversion by IDCT</details>
+* **idct_dim2(data)**  
+2 dimension IDCT.  
+@param  data : 2 dimension data  
+@return data : 2 dimension data conversion by IDCT</details> 
 
 #### For more information, please install this library and refer to "VideoDigitalWatermarking/html/index.html" with your browser.
 
