@@ -12,7 +12,7 @@ def calcBER(data1, data2):
 	u"""Calculate Bit Error Rate.
 	@param  data1 : result data
 	@param  data2 : answer data
-	@return ber   : bit error rate [%].
+	@return ber   : bit error rate [%]
 	"""
 	if len(data1) != len(data2):
 		print('The input data have different length.')
