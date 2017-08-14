@@ -20,9 +20,6 @@ def calcPSNR(cover, stego):
 	@return psnr  : PSNR [dB]
 	"""
 
-	print('cover shape =', cover.shape)
-	print('stego shape =', stego.shape)
-
 	#if cover and stego are RGB color images:
 	if cover.shape[2] == stego.shape[2] == 3:
 		layer_num = 3 
