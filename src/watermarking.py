@@ -22,14 +22,14 @@ def embedBitReplace(cover, secret, bit=1, interval=0):
 	"""
 	height = cover.shape[0]
 	width  = cover.shape[1]
-	es_length = len(secret) * (1+interval) #Embeded Sequense length
+	es_length = len(secret) * (1+interval) #Embeded Sequence length
 
 	if height*width < es_length:
 		print('Secret information is over the limit of embeded.')
 		print('Please review the cover image, secret information or interval.')
 		sys.exit()
 
-	#create embeded sequense
+	#create embeded sequence
 	es = np.zeros(es_length)
 	for i, secret_bit in enumerate(secret):
 			es[i*(interval+1)] = secret_bit
