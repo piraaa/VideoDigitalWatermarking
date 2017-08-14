@@ -10,7 +10,8 @@ import math
 import sys
 import numpy as np
 
-from image import getRgbLayer 
+#from image import getRgbLayer #test
+from VideoDigitalWatermarking.src.image import getRgbLayer 
 
 def calcPSNR(cover, stego):
 	u"""Calculate PSNR.
