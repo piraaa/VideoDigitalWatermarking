@@ -39,6 +39,9 @@ def calcPSNR(cover, stego):
 
 	mse = mse/layer_num
 
+	if mse == 0:
+		return float('-inf')
+
 	psnr = 10 * (math.log10(p) - math.log10(mse))
 
 	return psnr
