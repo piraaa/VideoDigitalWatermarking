@@ -21,7 +21,7 @@ def readGrayImage(filename):
 	"""
 	#imread flags=0(cv2.IMREAD_GRAYSCALE):GrayScale
 	img = cv2.imread(filename, cv2.IMREAD_GRAYSCALE)
-	print('Read "' + filename + '".')
+	#print('Read "' + filename + '".')
 	return img
 
 def readColorImage(filename):
@@ -32,7 +32,7 @@ def readColorImage(filename):
 	#imread flags>0(cv2.IMREAD_COLOR):3ChannelColors
 	#白黒画像でも強制的にRGBで扱ってしまう．
 	img = cv2.imread(filename, cv2.IMREAD_COLOR)
-	print('Read "' + filename + '".')
+	#print('Read "' + filename + '".')
 	return img
 
 def getRgbLayer(img, rgb=RED):
@@ -57,7 +57,7 @@ def writeImage(filename, img):
 	@param img      : 2 or 3 dimension image array
 	"""
 	cv2.imwrite(filename, img)
-	print('Write "'+filename+'".')
+	#print('Write "'+filename+'".')
 
 def showImage(img):
 	u"""Show imsge data.
