@@ -136,10 +136,9 @@ def zero2minus(zero_data):
 	@param  zero_data :secret information represented by 0 and 1.
 	@return minus_data:secret information represented by -1 and 1.
 	"""
-	minus_data = zero_data
-	for i,data in enumerate(zero_data):
-		if data == 0:
-			minus_data[i] = -1
+	minus_data = list()
+	for data in zero_data:
+		minus_data.append(2*data-1)
 	return minus_data
 
 def minus2zero(minus_data):
