@@ -12,6 +12,9 @@ import numpy as np
 TIME_DOMAIN = 1
 DCT_DOMAIN  = 0
 
+NON_CYCLE = 0
+CYCLE = 1
+
 def embedBitReplace(cover, secret, bit=1, interval=0):
 	u"""Embed secret informations by changing bit.
 	@param  cover   :cover data (2 dimension np.ndarray)
@@ -184,3 +187,32 @@ def minus2zero(minus_data):
 			zero_data[i] = 0
 	return zero_data
 
+def correlate(data1, data2, cycle=NON_CYCLE):
+	u"""Calculate correlate function.
+	@param  data1 : 
+	@param  data2 : 
+	@param  cycle : CYCLE or NON_SYCLE. Default is NON_CYCLE.
+	@return correlate : correlate list
+	"""
+	if cycle == NON_CYCLE:
+		correlate = np.correlate(data1, data2, 'full')
+
+	elif cycle == CYCLE:
+		N = len(data1)
+		correlate = list()
+
+		for i in np.arange(-N+1, N):
+			ans = 0
+			data1_shifted = np.roll(data1,i)
+			for j in range(0,N):
+				ans += data1_shifted[j]*data2[j]
+			correlate.append(ans)
+
+		correlate = np.array(correlate)
+
+	else:
+		print('Invalid argument.')
+		print('Please review parameter in correlate function.')
+		sys.exit()
+
+	return correlate
