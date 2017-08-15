@@ -17,7 +17,7 @@ rgb_data = readColorImage(fnin)
 red_data = getRgbLayer(rgb_data, rgb=RED)
 embeded_red_data = embedBitReplace(red_data, secret_data, bit=1, interval=0)
 
-#replace red_data to embeded red_data
+#replace red_data to embeded_red_data
 height = red_data.shape[0]
 width  = red_data.shape[1]
 for i in np.arange(height):
