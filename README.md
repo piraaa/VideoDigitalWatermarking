@@ -238,7 +238,7 @@ Convert 0 to -1.
 Some program samples.  
 
 ### Sample image
-![Lenna](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/test.bmp "Lenna")
+![test.bmp](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/test.bmp "Lenna")
 
 ### Embeded in time domain.
 Change the bit of the red layer in the time domain by the bit replace method. We use the LSB to minimize the effect on the image.  
@@ -436,8 +436,8 @@ for i in np.arange(blocks.shape[0]):
 		writeImage(str(i*blocks.shape[1]+j+1) + '.bmp', blocks[i][j])
 ```
 
-![Lenna1](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/1.bmp "Lenna1") ![Lenna2](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/2.bmp "Lenna2")  
-![Lenna3](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/3.bmp "Lenna3") ![Lenna4](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/4.bmp "Lenna4")
+![1.bmp](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/1.bmp "Lenna1") ![2.bmp](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/2.bmp "Lenna2")  
+![3.bmp](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/3.bmp "Lenna3") ![4.bmp](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/4.bmp "Lenna4")
 
 ### Calculate Bit Error Rate.
 
