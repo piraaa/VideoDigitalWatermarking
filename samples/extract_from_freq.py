@@ -1,5 +1,5 @@
 #
-# sample2.py
+# extract_from_freq.py
 # Created by pira on 2017/08/04.
 #
 
@@ -8,8 +8,8 @@
 from VideoDigitalWatermarking import *
 import numpy as np
 
-fn_cover = 'test1.png'
-fn_stego = 'test2.png'
+fn_cover  = 'test.bmp'
+fn_stego = 'test_embeded.bmp'
 
 rgb_cover = readColorImage(fn_cover)
 rgb_stego = readColorImage(fn_stego)
@@ -25,5 +25,5 @@ dct_stego = dct_dim2(y_stego)
 
 #print(dct_cover[0][0], dct_stego[0][0])
 
-secret_data = extractBitReplace(dct_cover, dct_stego, 8, bit=2, interval=100)
+secret_data = extractBitReplace(dct_cover, dct_stego, 8, bit=5, interval=100)
 print(secret_data)
