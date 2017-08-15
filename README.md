@@ -435,7 +435,8 @@ for i in np.arange(blocks.shape[0]):
 		writeImage(str(i*blocks.shape[1]+j+1) + '.bmp', blocks[i][j])
 ```
 
-![Lenna1](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/1.bmp "Lenna1") ![Lenna2](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/2.bmp "Lenna2") ![Lenna3](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/3.bmp "Lenna3") ![Lenna4](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/4.bmp "Lenna4")
+![Lenna1](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/1.bmp "Lenna1") ![Lenna2](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/2.bmp "Lenna2")  
+![Lenna3](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/3.bmp "Lenna3") ![Lenna4](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/4.bmp "Lenna4")
 
 ## License
 * MIT License.  
