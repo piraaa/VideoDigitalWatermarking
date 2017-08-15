@@ -45,9 +45,9 @@ def correlate(data1, data2, cycle=NON_CYCLE):
 	return correlate
 
 #test
-x=[1,-1,1]
-y=[1,-1,1]
-cycle = correlate(x, y, CYCLE)
-noncylcle = correlate(x, y, NON_CYCLE)
-print('CYCLE     =', cycle)
-print('NON CYCLE =', noncylcle)
+#x=[1,-1,1]
+#y=[1,-1,1]
+#cycle = correlate(x, y, CYCLE)
+#noncylcle = correlate(x, y, NON_CYCLE)
+#print('CYCLE     =', cycle)
+#print('NON CYCLE =', noncylcle)
