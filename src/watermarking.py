@@ -106,6 +106,38 @@ def _checkBitReplace(data, bit=1):
 	elif data[bit-1] == '1':
 		return 1
 
+def embedMseq(cover, secret, m, a=1, tau=1):
+	u"""Embed secret informations by spread spectrum using m-sequence.
+	@param  cover  : cover data (2 dimensional np.ndarray)
+	@param  secret : 0 or 1 secret information
+	@param  m      : M-Sequence
+	@param  a      : embed stlength
+	@param tau     : embed shift interval
+	@return stego   :srego data (2 dimension np.ndarray)
+	"""
+	height = cover.shape[0]
+	width  = cover.shape[1]
+	N = len(secret)
+	secret = zero2minus(secret)
+	secret = np.array(secret)
+
+	M = list()
+	for i in np.arange(N):
+		M.append(np.roll(m,i))
+	M = np.array(M)
+
+	es = secret.dot(M) + secret.sum()
+	es *= a
+
+	stego = _image2vrctor(cover)
+
+	for i, secret_bit in enumerate(es):
+		stego[i] += secret_bit
+
+	stego = _vector2image(stego, height, width)
+
+	return stego
+
 def _image2vrctor(img):
 	u"""Convert image to vector.
 	@param  img   :2 dimension image data
