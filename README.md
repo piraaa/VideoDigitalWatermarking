@@ -5,7 +5,7 @@ Basic watermarking libraries for images and videos with python 3.
 
 python3で画像・動画の電子透かしを行うための基本的なライブラリです．  
 
-(Edited on 2017/08/08)
+(Edited on 2017/08/15)
 
 ## Install
 1. Install OpenCV.
