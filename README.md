@@ -232,7 +232,7 @@ Convert 0 to -1.
 #### For more information, please install this library and refer to "VideoDigitalWatermarking/html/index.html" with your browser.
 
 ## Samples
-* Embeded in time domain.
+### Embeded in time domain.
 Change the bit of the red layer in the time domain by the bit replace method. We use the LSB to minimize the effect on the image.  
 
 ```python:embed_in_time.py
@@ -265,7 +265,7 @@ for i in np.arange(height):
 writeImage(fnout, rgb_data)
 ```
 
-* Extract from time domain.
+### Extract from time domain.
 Extract secret information from the LSB of the red layer in the time domain.  
 
 ```python:extract_from_time
@@ -298,7 +298,7 @@ Read "test_embeded.bmp".
 [ 1.  1.  1.  1.  0.  0.  0.  0.]
 ```
 
-* Embed in frequency domain.
+### Embed in frequency domain.
 Change the any bit of the Y layer in the frequency domain by the bit replace method. We use the high bit to avoid the Quantization error.  
 
 ```python:embed_in_freq.py
@@ -339,7 +339,7 @@ embeded_rgb_data = ycc2rgb(ycc_data)
 writeImage(fnout, embeded_rgb_data)
 ```
 
-* Extract from frequency domain.
+### Extract from frequency domain.
 Extract secret information from the any bit of the Y layer in the frequency domain.  
 
 ```python:extract_from_freq.py
