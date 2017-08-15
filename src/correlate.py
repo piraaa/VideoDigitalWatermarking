@@ -30,9 +30,9 @@ def correlate(data1, data2, cycle=NON_CYCLE):
 
 		for i in np.arange(-N+1, N):
 			ans = 0
-			shift_data1 = np.roll(data1,i)
+			data1_shifted = np.roll(data1,i)
 			for j in range(0,N):
-				ans += shift_data1[j]*data2[j]
+				ans += data1_shifted[j]*data2[j]
 			correlate.append(ans)
 
 		correlate = np.array(correlate)
