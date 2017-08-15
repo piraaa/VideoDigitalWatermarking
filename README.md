@@ -299,7 +299,7 @@ Read "test_embeded.bmp".
 ```
 
 ### Embed in frequency domain.
-Change the any bit of the Y layer in the frequency domain by the bit replace method. We use the high bit to avoid the Quantization error.  
+Change the any bit of the Y layer in the frequency domain by the bit replace method. We use the high bit to avoid the "quantization error".  
 
 ```python:embed_in_freq.py
 
