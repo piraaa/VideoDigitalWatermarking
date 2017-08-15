@@ -439,6 +439,35 @@ for i in np.arange(blocks.shape[0]):
 ![1.bmp](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/1.bmp "Lenna1") ![2.bmp](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/2.bmp "Lenna2")  
 ![3.bmp](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/3.bmp "Lenna3") ![4.bmp](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/4.bmp "Lenna4")
 
+### Correlate function
+Calculate correlate function.
+
+```python=correlate.py
+#
+# correlate.py
+# Created by pira on 2017/08/15.
+#
+
+#coding: utf-8
+
+from VideoDigitalWatermarking import *
+
+#test
+x=[1,-1,1]
+y=[1,-1,1]
+
+cycle = correlate(x, y, CYCLE)
+noncylcle = correlate(x, y, NON_CYCLE)
+
+print('CYCLE     =', cycle)
+print('NON CYCLE =', noncylcle)
+```
+
+```
+CYCLE     = [-1 -1  3 -1 -1]
+NON CYCLE = [ 1 -2  3 -2  1]
+```
+
 ### Calculate Bit Error Rate.
 
 ```python=BER.py
