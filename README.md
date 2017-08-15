@@ -307,7 +307,6 @@ Read "test_embeded.bmp".
 Change the any bit of the Y layer in the frequency domain by the bit replace method. We use the high bit to avoid the "quantization error".  
 
 ```python:embed_in_freq.py
-
 # 
 # embed_in_freq.py
 # Created by pira on 2017/08/01.
@@ -348,7 +347,6 @@ writeImage(fnout, embeded_rgb_data)
 Extract secret information from the any bit of the Y layer in the frequency domain.  
 
 ```python:extract_from_freq.py
-
 #
 # extract_from_freq.py
 # Created by pira on 2017/08/04.
@@ -437,6 +435,57 @@ for i in np.arange(blocks.shape[0]):
 
 ![Lenna1](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/1.bmp "Lenna1") ![Lenna2](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/2.bmp "Lenna2")  
 ![Lenna3](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/3.bmp "Lenna3") ![Lenna4](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/4.bmp "Lenna4")
+
+### Calculate Bit Error Rate.
+
+```python=BER.py
+#
+# BER.py
+# Created by pira on 2017/08/15.
+#
+
+#coding: utf-8
+
+from VideoDigitalWatermarking import *
+
+data1 = [1,0,1,0,1,0,1,0]
+data2 = [1,1,1,1,0,0,0,0]
+ber = calcBER(data1, data2)
+print('BER =', ber, '[%]')
+```
+
+```
+BER = 50.0 [%]
+```
+
+### Calculate PSNR.
+
+```python=PSNR.py
+#
+# PSNR.py
+# Created by pira on 2017/08/15.
+#
+
+#coding: utf-8
+
+from VideoDigitalWatermarking import *
+import numpy as np
+
+a = np.array([[[11,10,10],[20,20,20],[30,30,30]],[[10,10,10],[20,20,20],[30,30,30]],[[10,10,10],[20,20,20],[30,30,30]]])
+b = np.array([[[10,10,10],[20,20,20],[30,30,30]],[[10,10,10],[20,20,20],[30,30,30]],[[10,10,10],[20,20,20],[30,30,30]]])
+c = np.array([[[10,10,10],[20,20,20],[30,30,30]],[[10,10,10],[20,20,20],[30,30,30]],[[10,10,10],[20,20,20],[30,30,30]]])
+
+psnr = calcPSNR(a, b)
+print('PSNR =', psnr)
+
+psnr = calcPSNR(b, c)
+print('PSNR =', psnr)
+```
+
+```
+PSNR = 38.37903944592942
+PSNR = -inf
+```
 
 ## License
 * MIT License.  
