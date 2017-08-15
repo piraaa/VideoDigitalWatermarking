@@ -10,7 +10,8 @@ import math
 import sys
 import numpy as np
 
-from image import getRgbLayer 
+#from image import getRgbLayer #test
+from VideoDigitalWatermarking.src.image import getRgbLayer 
 
 def calcPSNR(cover, stego):
 	u"""Calculate PSNR.
@@ -18,9 +19,6 @@ def calcPSNR(cover, stego):
 	@param  stego : stego image 
 	@return psnr  : PSNR [dB]
 	"""
-
-	print('cover shape =', cover.shape)
-	print('stego shape =', stego.shape)
 
 	#if cover and stego are RGB color images:
 	if cover.shape[2] == stego.shape[2] == 3:
@@ -40,6 +38,9 @@ def calcPSNR(cover, stego):
 		mse += _calcMSE(getRgbLayer(cover,i), getRgbLayer(stego,i))
 
 	mse = mse/layer_num
+
+	if mse == 0:
+		return float('-inf')
 
 	psnr = 10 * (math.log10(p) - math.log10(mse))
 

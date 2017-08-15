@@ -22,14 +22,14 @@ def embedBitReplace(cover, secret, bit=1, interval=0):
 	"""
 	height = cover.shape[0]
 	width  = cover.shape[1]
-	es_length = len(secret) * (1+interval) #Embeded Sequense length
+	es_length = len(secret) * (1+interval) #Embeded Sequence length
 
 	if height*width < es_length:
 		print('Secret information is over the limit of embeded.')
 		print('Please review the cover image, secret information or interval.')
 		sys.exit()
 
-	#create embeded sequense
+	#create embeded sequence
 	es = np.zeros(es_length)
 	for i, secret_bit in enumerate(secret):
 			es[i*(interval+1)] = secret_bit
@@ -136,10 +136,9 @@ def zero2minus(zero_data):
 	@param  zero_data :secret information represented by 0 and 1.
 	@return minus_data:secret information represented by -1 and 1.
 	"""
-	minus_data = zero_data
-	for i,data in enumerate(zero_data):
-		if data == 0:
-			minus_data[i] = -1
+	minus_data = list()
+	for data in zero_data:
+		minus_data.append(2*data-1)
 	return minus_data
 
 def minus2zero(minus_data):

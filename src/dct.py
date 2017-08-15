@@ -11,8 +11,8 @@ import math
 
 def dct_dim1(data):
 	u"""1 dimension DCT.
- 	@param  data:1 dimension data
- 	@return data:1 dimension data conversion by DCT (numpy.ndarray)
+ 	@param  data : 1 dimension data
+ 	@return data : 1 dimension data conversion by DCT (numpy.ndarray)
 	"""
 	N = len(data)
 	data = data.reshape(N,1)
@@ -22,9 +22,9 @@ def dct_dim1(data):
 	return dct_data
 
 def idct_dim1(data):
-	u"""1 dimension DCT.
- 	@param  data:1 dimension data
- 	@return data:1 dimension data conversion by IDCT (numpy.ndarray)
+	u"""1 dimension IDCT.
+ 	@param  data : 1 dimension data
+ 	@return data : 1 dimension data conversion by IDCT (numpy.ndarray)
 	"""
 	N = len(data)
 	data = data.reshape(N,1)
@@ -35,8 +35,8 @@ def idct_dim1(data):
 
 def dct_dim2(data):
 	u"""2 dimension DCT.
- 	@param  data:2 dimension data
- 	@return data:2 dimension data conversion by DCT (numpy.ndarray)
+ 	@param  data : 2 dimension data
+ 	@return data : 2 dimension data conversion by DCT (numpy.ndarray)
 	"""
 	height = data.shape[0]
 	width = data.shape[1]
@@ -48,9 +48,9 @@ def dct_dim2(data):
 	return dct_data
 
 def idct_dim2(data):
-	u"""2 dimension DCT.
- 	@param  data:2 dimension data
- 	@return data:2 dimension data conversion by IDCT (numpy.ndarray)
+	u"""2 dimension IDCT.
+ 	@param  data : 2 dimension data
+ 	@return data : 2 dimension data conversion by IDCT (numpy.ndarray)
 	"""
 	height = data.shape[0]
 	width = data.shape[1]
