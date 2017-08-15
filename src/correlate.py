@@ -21,10 +21,10 @@ def correlate(data1, data2, cycle=NON_CYCLE):
 	@param  cycle : CYCLE or NON_SYCLE. Default is NON_CYCLE.
 	@return correlate : correlate list
 	"""
-	if cycle == CYCLE:
-		correlate = np.correlate(x,y,'full')
+	if cycle == NON_CYCLE:
+		correlate = np.correlate(data1, data2, 'full')
 
-	elif cycle == NON_CYCLE:
+	elif cycle == CYCLE:
 		N = len(data1)
 		correlate = list()
 
@@ -45,9 +45,9 @@ def correlate(data1, data2, cycle=NON_CYCLE):
 	return correlate
 
 #test
-#x=[1,1,1]
-#y=[2,2,2]
-#cycle = correlate(x, y, CYCLE)
-#noncylcle = correlate(x, y, NON_CYCLE)
-#print('CYCLE     =', cycle)
-#print('NON CYCLE =', noncylcle)
+x=[1,-1,1]
+y=[1,-1,1]
+cycle = correlate(x, y, CYCLE)
+noncylcle = correlate(x, y, NON_CYCLE)
+print('CYCLE     =', cycle)
+print('NON CYCLE =', noncylcle)
