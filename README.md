@@ -479,15 +479,15 @@ b = np.array([[[10,10,10],[20,20,20],[30,30,30]],[[10,10,10],[20,20,20],[30,30,3
 c = np.array([[[10,10,10],[20,20,20],[30,30,30]],[[10,10,10],[20,20,20],[30,30,30]],[[10,10,10],[20,20,20],[30,30,30]]])
 
 psnr = calcPSNR(a, b)
-print('PSNR =', psnr)
+print('PSNR =', psnr, '[dB]')
 
 psnr = calcPSNR(b, c)
-print('PSNR =', psnr)
+print('PSNR =', psnr, '[dB]')
 ```
 
 ```
-PSNR = 38.37903944592942
-PSNR = -inf
+PSNR = 38.37903944592942 [dB]
+PSNR = -inf [dB]
 ```
 
 ## License
