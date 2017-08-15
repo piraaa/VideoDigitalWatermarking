@@ -232,6 +232,11 @@ Convert 0 to -1.
 #### For more information, please install this library and refer to "VideoDigitalWatermarking/html/index.html" with your browser.
 
 ## Samples
+Some program samples.  
+
+### Sample image
+![Lenna](https://github.com/piraaa/VideoDigitalWatermarking/blob/samples/samples/test.bmp "Lenna")
+
 ### Embeded in time domain.
 Change the bit of the red layer in the time domain by the bit replace method. We use the LSB to minimize the effect on the image.  
 
