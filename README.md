@@ -381,6 +381,55 @@ Read "test_embeded.bmp".
 [ 1.  1.  1.  1.  0.  0.  0.  0.]
 ```
 
+### Divide video into images.
+
+```python:divide_video.py
+# 
+# divide_video.py
+# Created by pira on 2017/08/07.
+#
+
+#coding: utf-8
+
+from VideoDigitalWatermarking import *
+import numpy as np
+
+filename  = 'test.mp4'
+video2image(filename, n=5)
+```
+
+```
+frame num = 5
+fps       = 30
+hright    = 1080
+width     = 1920 
+
+Export 5 jpeg Images.
+```
+
+### Divide image into blocks.
+
+```python:divide_image_into_blocks.py
+#
+# divide_image_into_blocks.py
+# Created by pira on 2017/08/15.
+#
+
+#coding: utf-8
+
+from VideoDigitalWatermarking import *
+
+filename = 'test.bmp'
+image = readColorImage(filename)
+
+blocks = colorimage2block(image, [128,128])
+#print(blocks.shape)
+
+for i in np.arange(blocks.shape[0]):
+	for j in np.arange(blocks.shape[1]):
+		writeImage(str(i*blocks.shape[1]+j+1) + '.bmp', blocks[i][j])
+```
+
 ## License
 * MIT License.  
 Please see [LICENSE](https://github.com/piraaa/VideoDigitalWatermarking/blob/master/LICENSE).   
