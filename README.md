@@ -19,6 +19,7 @@ $ brew install opencv3 --with-python3
 ```
 
 2. Install this library.
+
 ```bash:bash
 $ git clone https://github.com/piraaa/VideoDigitalWatermarking.git
 ```
@@ -27,9 +28,11 @@ $ git clone https://github.com/piraaa/VideoDigitalWatermarking.git
 Put a python file in the same directory as "VideoDigitalWatermarking".  
 
 And you write only 
+
 ```python
 from VideoDigitalWatermarking import *
 ```
+
 for import.  
 
 You can use all following functions.  
