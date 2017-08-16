@@ -11,9 +11,9 @@ import cv2
 
 def video2image(filename, n=0): 
 	u"""Read mpeg video and divide into jpeg images.
-	@param  filename:video filename
-	@param  n       :number of export images (if n=0, this function exports all images in video.)  
-	@return count   :number of exported images
+	@param  filename : video filename
+	@param  n        : number of export images (if n=0, this function exports all images in video.)  
+	@return count    : number of exported images
 	"""
 	count = 1
 	fnin = filename[:filename.rfind('.')] #拡張子をとったファイル名を取得
