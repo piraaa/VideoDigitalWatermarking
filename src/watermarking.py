@@ -162,11 +162,11 @@ def extractMseq(cover, stego, secret_length, m, tau=1):
 	secret_data = correlate(m, data, cycle=CYCLE)
 	center = ((m_length-1)*2+1)//2
 	secret_data = secret_data[center:center+secret_length]
-	secret_data = list(map(_checkMseq, secret_data))
+	secret_data = list(map(_checkData, secret_data))
 
 	return secret_data
 
-def _checkMseq(data):
+def _checkData(data):
 	if data > 0:
 		return 1
 	elif data < 0:
