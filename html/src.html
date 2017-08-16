@@ -53,12 +53,18 @@
 <dd><p>Calculate Bit Error Rate.
 &#64;param  data1 : result data
 &#64;param  data2 : answer data
-&#64;return ber   : bit error rate [%].</p>
+&#64;return ber   : bit error rate [%]</p>
 </dd></dl>
 
 </div>
 <div class="section" id="module-src.ccc">
 <span id="src-ccc-module"></span><h2>src.ccc module<a class="headerlink" href="#module-src.ccc" title="Permalink to this headline">¶</a></h2>
+<p>For Complete Complementary Code.</p>
+<dl class="function">
+<dt id="src.ccc.generateCCC">
+<code class="descclassname">src.ccc.</code><code class="descname">generateCCC</code><span class="sig-paren">(</span><em>N</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ccc.generateCCC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="module-src.dct">
 <span id="src-dct-module"></span><h2>src.dct module<a class="headerlink" href="#module-src.dct" title="Permalink to this headline">¶</a></h2>
@@ -67,44 +73,32 @@
 <dt id="src.dct.dct_dim1">
 <code class="descclassname">src.dct.</code><code class="descname">dct_dim1</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#src.dct.dct_dim1" title="Permalink to this definition">¶</a></dt>
 <dd><p>1 dimension DCT.
-&#64;param  <a class="reference external" href="data:1">data:1</a> dimension data
-&#64;return <a class="reference external" href="data:1">data:1</a> dimension data conversion by DCT (numpy.ndarray)</p>
+&#64;param  data : 1 dimension data
+&#64;return data : 1 dimension data conversion by DCT (numpy.ndarray)</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="src.dct.dct_dim2">
 <code class="descclassname">src.dct.</code><code class="descname">dct_dim2</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#src.dct.dct_dim2" title="Permalink to this definition">¶</a></dt>
 <dd><p>2 dimension DCT.
-&#64;param  <a class="reference external" href="data:2">data:2</a> dimension data
-&#64;return <a class="reference external" href="data:2">data:2</a> dimension data conversion by DCT (numpy.ndarray)</p>
+&#64;param  data : 2 dimension data
+&#64;return data : 2 dimension data conversion by DCT (numpy.ndarray)</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="src.dct.idct_dim1">
 <code class="descclassname">src.dct.</code><code class="descname">idct_dim1</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#src.dct.idct_dim1" title="Permalink to this definition">¶</a></dt>
-<dd><p>1 dimension DCT.
-&#64;param  <a class="reference external" href="data:1">data:1</a> dimension data
-&#64;return <a class="reference external" href="data:1">data:1</a> dimension data conversion by IDCT (numpy.ndarray)</p>
+<dd><p>1 dimension IDCT.
+&#64;param  data : 1 dimension data
+&#64;return data : 1 dimension data conversion by IDCT (numpy.ndarray)</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="src.dct.idct_dim2">
 <code class="descclassname">src.dct.</code><code class="descname">idct_dim2</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#src.dct.idct_dim2" title="Permalink to this definition">¶</a></dt>
-<dd><p>2 dimension DCT.
-&#64;param  <a class="reference external" href="data:2">data:2</a> dimension data
-&#64;return <a class="reference external" href="data:2">data:2</a> dimension data conversion by IDCT (numpy.ndarray)</p>
-</dd></dl>
-
-</div>
-<div class="section" id="module-src.esequence">
-<span id="src-esequence-module"></span><h2>src.esequence module<a class="headerlink" href="#module-src.esequence" title="Permalink to this headline">¶</a></h2>
-<p>E-Sequence (even-shift orthogonal sequence)</p>
-<dl class="function">
-<dt id="src.esequence.generateE">
-<code class="descclassname">src.esequence.</code><code class="descname">generateE</code><span class="sig-paren">(</span><em>l</em><span class="sig-paren">)</span><a class="headerlink" href="#src.esequence.generateE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate E-Sequence. The length l.
-&#64;param  l:length
-&#64;return e:E-Sequence</p>
+<dd><p>2 dimension IDCT.
+&#64;param  data : 2 dimension data
+&#64;return data : 2 dimension data conversion by IDCT (numpy.ndarray)</p>
 </dd></dl>
 
 </div>
@@ -115,79 +109,82 @@
 <dt id="src.image.colorimage2block">
 <code class="descclassname">src.image.</code><code class="descname">colorimage2block</code><span class="sig-paren">(</span><em>img</em>, <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#src.image.colorimage2block" title="Permalink to this definition">¶</a></dt>
 <dd><p>Divide color image into blocks.
-&#64;param  img   :a 3 dimension image like a np.array[height][width][BGR]
-&#64;param  size  :block size list like a [height, width]
-&#64;return blocks:a 5 dimension blocks like a np.ndarray[block_height][block_width][height][width][BGR]</p>
+&#64;param  img    : a 3 dimension image like a np.array[height][width][BGR]
+&#64;param  size   : block size list like a [height, width]
+&#64;return blocks : a 5 dimension blocks like a np.ndarray[block_height][block_width][height][width][BGR]</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="src.image.getRgbLayer">
 <code class="descclassname">src.image.</code><code class="descname">getRgbLayer</code><span class="sig-paren">(</span><em>img</em>, <em>rgb=2</em><span class="sig-paren">)</span><a class="headerlink" href="#src.image.getRgbLayer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read grayscale image.
-&#64;param  img  :a 3 dimension color image like np.ndarray[Height][Width][BGR]
-&#64;param  rgb  :a returned layer number. Blue is 0, Green is 1 and Red is 2. You can also give a colorname like RED.  
-&#64;return layer:a color layer of image, only red, green or blue.</p>
+&#64;param  img   : a 3 dimension color image like np.ndarray[Height][Width][BGR]
+&#64;param  rgb   : a returned layer number. Blue is 0, Green is 1 and Red is 2. You can also give a colorname like RED.  
+&#64;return layer : a color layer of image, only red, green or blue.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="src.image.get_y">
 <code class="descclassname">src.image.</code><code class="descname">get_y</code><span class="sig-paren">(</span><em>img</em><span class="sig-paren">)</span><a class="headerlink" href="#src.image.get_y" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get only Y from YCC image.
-&#64;param  img    :3 dimension np.ndarray[Height][Width][YCC]
-&#64;return y_data :2 dimension np.ndarray[Height][Width]. Including only Y.</p>
+&#64;param  img     : 3 dimension np.ndarray[Height][Width][YCC]
+&#64;return y_data  : 2 dimension np.ndarray[Height][Width]. Including only Y.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="src.image.grayimage2block">
 <code class="descclassname">src.image.</code><code class="descname">grayimage2block</code><span class="sig-paren">(</span><em>img</em>, <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#src.image.grayimage2block" title="Permalink to this definition">¶</a></dt>
 <dd><p>Divide gray image into blocks.
-&#64;param  img   :a 2 dimension gray image like a np.array[height][width]
-&#64;param  size  :block size list like a [height, width]
-&#64;return blocks:a 4 dimension blocks like a np.ndarray[block_height][block_width][height][width]</p>
+&#64;param  img    : a 2 dimension gray image like a np.array[height][width]
+&#64;param  size   : block size list like a [height, width]
+&#64;return blocks : a 4 dimension blocks like a np.ndarray[block_height][block_width][height][width]</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="src.image.readColorImage">
 <code class="descclassname">src.image.</code><code class="descname">readColorImage</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#src.image.readColorImage" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read color image.
-[notice] Grayscale images are treated as RGB image. 
-(ex. if pixel value is 100, it&#8217;s treated [100][100][100] RGB image.)
-&#64;param  filename:filename
-&#64;return img     :3 dimension np.ndarray[Height][Width][BGR]</p>
+<dd><p>Read color image. [notice] Grayscale images are treated as RGB image. (ex. if pixel value is 100, it&#8217;s treated [100][100][100] RGB image.)
+&#64;param  filename : filename
+&#64;return img      : 3 dimension np.ndarray[Height][Width][BGR]</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="src.image.readGrayImage">
 <code class="descclassname">src.image.</code><code class="descname">readGrayImage</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#src.image.readGrayImage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read grayscale image.
-&#64;param  filename:filename
-&#64;return img     :2 dimension np.ndarray[Height][Width]</p>
+&#64;param  filename : filename
+&#64;return img      : 2 dimension np.ndarray[Height][Width]</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="src.image.rgb2ycc">
 <code class="descclassname">src.image.</code><code class="descname">rgb2ycc</code><span class="sig-paren">(</span><em>img</em><span class="sig-paren">)</span><a class="headerlink" href="#src.image.rgb2ycc" title="Permalink to this definition">¶</a></dt>
 <dd><p>RGB to YCbCr.
-&#64;param  img     :3 dimension np.ndarray[Height][Width][RGB]
-&#64;return ycc_data:3 dimension np.ndarray[Height][Width][YCC]</p>
+&#64;param  img      : 3 dimension np.ndarray[Height][Width][RGB]
+&#64;return ycc_data : 3 dimension np.ndarray[Height][Width][YCC]</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="src.image.showImage">
 <code class="descclassname">src.image.</code><code class="descname">showImage</code><span class="sig-paren">(</span><em>img</em><span class="sig-paren">)</span><a class="headerlink" href="#src.image.showImage" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Show imsge data.
+&#64;param img : image array</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="src.image.writeImage">
 <code class="descclassname">src.image.</code><code class="descname">writeImage</code><span class="sig-paren">(</span><em>filename</em>, <em>img</em><span class="sig-paren">)</span><a class="headerlink" href="#src.image.writeImage" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Export image data.
+&#64;param filename : filename for export image data
+&#64;param img      : 2 or 3 dimension image array</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="src.image.ycc2rgb">
 <code class="descclassname">src.image.</code><code class="descname">ycc2rgb</code><span class="sig-paren">(</span><em>img</em><span class="sig-paren">)</span><a class="headerlink" href="#src.image.ycc2rgb" title="Permalink to this definition">¶</a></dt>
 <dd><p>YCbCr to BGR.
-&#64;param  img     :3 dimension np.ndarray[Height][Width][YCC]
-&#64;return rgb_data:3 dimension np.ndarray[Height][Width][BGR]</p>
+&#64;param  img      : 3 dimension np.ndarray[Height][Width][YCC]
+&#64;return rgb_data : 3 dimension np.ndarray[Height][Width][BGR]</p>
 </dd></dl>
 
 </div>
@@ -213,6 +210,18 @@
 &#64;param  cover : cover image
 &#64;param  stego : stego image 
 &#64;return psnr  : PSNR [dB]</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-src.secret">
+<span id="src-secret-module"></span><h2>src.secret module<a class="headerlink" href="#module-src.secret" title="Permalink to this headline">¶</a></h2>
+<p>For Secret informations.</p>
+<dl class="function">
+<dt id="src.secret.generateSecret">
+<code class="descclassname">src.secret.</code><code class="descname">generateSecret</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#src.secret.generateSecret" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate 0 or 1 random secret information for simulation.
+&#64;param  n : length
+&#64;return secret : secret information list</p>
 </dd></dl>
 
 </div>
@@ -243,6 +252,38 @@
 <span id="src-watermarking-module"></span><h2>src.watermarking module<a class="headerlink" href="#module-src.watermarking" title="Permalink to this headline">¶</a></h2>
 <p>For image watermarking.</p>
 <dl class="function">
+<dt id="src.watermarking.correlate">
+<code class="descclassname">src.watermarking.</code><code class="descname">correlate</code><span class="sig-paren">(</span><em>data1</em>, <em>data2</em>, <em>cycle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#src.watermarking.correlate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate correlate function.
+&#64;param  data1 : 
+&#64;param  data2 : 
+&#64;param  cycle : CYCLE or NON_SYCLE. Default is NON_CYCLE.
+&#64;return correlate : correlate list</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.watermarking.createBasicSeq">
+<code class="descclassname">src.watermarking.</code><code class="descname">createBasicSeq</code><span class="sig-paren">(</span><em>ccc</em>, <em>secret_length</em>, <em>tau=1</em>, <em>ch=1</em><span class="sig-paren">)</span><a class="headerlink" href="#src.watermarking.createBasicSeq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create Basic-Sequence using CCC.
+&#64;param  ccc           : (N,N,N**2)CCC
+&#64;param  secret_length : length of secret information
+&#64;param  tau           : shift interval
+&#64;param  ch            : channel of CCC
+&#64;return basic         : basic sequence</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.watermarking.createEmbedSeq">
+<code class="descclassname">src.watermarking.</code><code class="descname">createEmbedSeq</code><span class="sig-paren">(</span><em>basic</em>, <em>secret</em>, <em>a=1</em>, <em>tau=1</em><span class="sig-paren">)</span><a class="headerlink" href="#src.watermarking.createEmbedSeq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create Embed-Sequence using CCC.
+&#64;param  ccc    : (N,N,N**2)CCC
+&#64;param  secret : secret information
+&#64;param  a      : embed strength
+&#64;param  tau    : shift interval
+&#64;return es     : basic sequence</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="src.watermarking.embedBitReplace">
 <code class="descclassname">src.watermarking.</code><code class="descname">embedBitReplace</code><span class="sig-paren">(</span><em>cover</em>, <em>secret</em>, <em>bit=1</em>, <em>interval=0</em><span class="sig-paren">)</span><a class="headerlink" href="#src.watermarking.embedBitReplace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Embed secret informations by changing bit.
@@ -250,6 +291,24 @@
 &#64;param  secret  :0 or 1 secret information list
 &#64;param  bit     :number of replaced bit (It&#8217;s recommended to be close to the LSB.)
 &#64;param  interval:ebmed interval
+&#64;return stego   :srego data (2 dimension np.ndarray)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.watermarking.embedCCC">
+<code class="descclassname">src.watermarking.</code><code class="descname">embedCCC</code><span class="sig-paren">(</span><em>ccc</em>, <em>secret</em><span class="sig-paren">)</span><a class="headerlink" href="#src.watermarking.embedCCC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Embed secret informations by spread spectrum using CCC.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.watermarking.embedMseq">
+<code class="descclassname">src.watermarking.</code><code class="descname">embedMseq</code><span class="sig-paren">(</span><em>cover</em>, <em>secret</em>, <em>m</em>, <em>a=1</em>, <em>tau=1</em><span class="sig-paren">)</span><a class="headerlink" href="#src.watermarking.embedMseq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Embed secret informations by spread spectrum using m-sequence.
+&#64;param  cover  : cover data (2 dimensional np.ndarray)
+&#64;param  secret : 0 or 1 secret information
+&#64;param  m      : M-Sequence
+&#64;param  a      : embed stlength
+&#64;param tau     : embed shift interval
 &#64;return stego   :srego data (2 dimension np.ndarray)</p>
 </dd></dl>
 
@@ -263,6 +322,30 @@
 &#64;param  bit          :number of replaced bit 
 &#64;param  interval     :embed interval
 &#64;return secret       :extracted secret information</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.watermarking.extractCCC">
+<code class="descclassname">src.watermarking.</code><code class="descname">extractCCC</code><span class="sig-paren">(</span><em>ccc</em>, <em>es</em>, <em>secret_length</em>, <em>tau=1</em>, <em>ch=1</em><span class="sig-paren">)</span><a class="headerlink" href="#src.watermarking.extractCCC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract secret informations by spread spectrum using CCC.
+&#64;param  ccc           : (N,N,N**2)CCC
+&#64;param  es            : embed sequence (excracted from stego data)
+&#64;param  secret_length : length of secret information
+&#64;param  tau           : shift interval
+&#64;param  ch            : channel of CCC
+&#64;return secret_data   : extracted secret information</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.watermarking.extractMseq">
+<code class="descclassname">src.watermarking.</code><code class="descname">extractMseq</code><span class="sig-paren">(</span><em>cover</em>, <em>stego</em>, <em>secret_length</em>, <em>m</em>, <em>tau=1</em><span class="sig-paren">)</span><a class="headerlink" href="#src.watermarking.extractMseq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract secret informations by spread spectrum using m-sequence.
+&#64;param  cover         : cover data (2 dimensional np.ndarray)
+&#64;param  stego         : stego data (2 dimension np.ndarray)
+&#64;param  secret_length : length of secret information
+&#64;param  m             : M-Sequence
+&#64;param  tau           : embed shift interval
+&#64;return secret        : extracted secret information</p>
 </dd></dl>
 
 <dl class="function">
@@ -300,10 +383,10 @@
 <li><a class="reference internal" href="#module-src.ber">src.ber module</a></li>
 <li><a class="reference internal" href="#module-src.ccc">src.ccc module</a></li>
 <li><a class="reference internal" href="#module-src.dct">src.dct module</a></li>
-<li><a class="reference internal" href="#module-src.esequence">src.esequence module</a></li>
 <li><a class="reference internal" href="#module-src.image">src.image module</a></li>
 <li><a class="reference internal" href="#module-src.msequence">src.msequence module</a></li>
 <li><a class="reference internal" href="#module-src.psnr">src.psnr module</a></li>
+<li><a class="reference internal" href="#module-src.secret">src.secret module</a></li>
 <li><a class="reference internal" href="#module-src.video">src.video module</a></li>
 <li><a class="reference internal" href="#module-src.watermarking">src.watermarking module</a></li>
 <li><a class="reference internal" href="#module-src">Module contents</a></li>
