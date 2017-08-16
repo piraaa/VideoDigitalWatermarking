@@ -252,7 +252,6 @@ Change the bit of the red layer in the time domain by the bit replace method. We
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
-import numpy as np
 
 fnin  = 'test.bmp'
 fnout = 'test_embeded.bmp'
@@ -263,7 +262,7 @@ rgb_data = readColorImage(fnin)
 red_data = getRgbLayer(rgb_data, rgb=RED)
 embeded_red_data = embedBitReplace(red_data, secret_data, bit=1, interval=0)
 
-#replace red_data to embeded red_data
+#replace red_data to embeded_red_data
 height = red_data.shape[0]
 width  = red_data.shape[1]
 for i in np.arange(height):
@@ -276,7 +275,7 @@ writeImage(fnout, rgb_data)
 ### Extract from time domain.
 Extract secret information from the LSB of the red layer in the time domain.  
 
-```python:extract_from_time
+```python:extract_from_time.py
 #
 # extract_from_time.py
 # Created by pira on 2017/08/09.
@@ -285,7 +284,6 @@ Extract secret information from the LSB of the red layer in the time domain.
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
-import numpy as np
 
 fn_cover  = 'test.bmp'
 fn_stego = 'test_embeded.bmp'
@@ -318,7 +316,6 @@ Change the any bit of the Y layer in the frequency domain by the bit replace met
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
-import numpy as np
 
 fnin  = 'test.bmp'
 fnout = 'test_embeded.bmp'
@@ -358,7 +355,6 @@ Extract secret information from the any bit of the Y layer in the frequency doma
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
-import numpy as np
 
 fn_cover  = 'test.bmp'
 fn_stego = 'test_embeded.bmp'
