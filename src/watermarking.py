@@ -166,6 +166,94 @@ def extractMseq(cover, stego, secret_length, m, tau=1):
 
 	return secret_data
 
+def embedCCC(ccc, secret):
+	u"""Embed secret informations by spread spectrum using CCC.
+	"""
+	pass
+
+def createBasicSeq(ccc, secret_length, tau=1, ch=1):
+	u"""Create Basic-Sequence using CCC.
+	@param  ccc           : (N,N,N**2)CCC
+	@param  secret_length : length of secret information
+	@param  tau           : shift interval
+	@param  ch            : channel of CCC
+	@return basic         : basic sequence
+	"""
+	N = len(ccc)
+	T = N**2 + tau*(secret_length-1)
+	basic = list()
+
+	for i in np.arange(N):
+		for j in np.arange(T):
+			if j < N**2:
+				basic.append(ccc[ch-1][i][j])
+			else:
+				basic.append(0)
+
+	basic = np.array(basic)
+	return basic
+
+def createEmbedSeq(basic, secret, a=1, tau=1):
+	u"""Create Embed-Sequence using CCC.
+	@param  ccc    : (N,N,N**2)CCC
+	@param  secret : secret information
+	@param  a      : embed strength
+	@param  tau    : shift interval
+	@return es     : basic sequence
+	"""
+	secret = zero2minus(secret)
+	secret = np.array(secret)
+	basic_length  = len(basic)
+	secret_length = len(secret)
+
+	ex_basic_length = basic_length + tau * (secret_length-1)
+
+	ex_basic = list()
+	for d in basic:
+		ex_basic.append(int(d))
+	for i in np.arange(basic_length, ex_basic_length):
+		ex_basic.append(0)
+	#print(ex_basic)
+
+	es = list()
+	for i in np.arange(secret_length):
+		es.append(np.roll(ex_basic, i*tau))
+
+	es = secret.dot(es)
+	es *= a
+
+	return es
+
+def extractCCC(ccc, es, secret_length, tau=1, ch=1):
+	u"""Extract secret informations by spread spectrum using CCC.
+	@param  ccc           : (N,N,N**2)CCC
+	@param  es            : embed sequence (excracted from stego data)
+	@param  secret_length : length of secret information
+	@param  tau           : shift interval
+	@param  ch            : channel of CCC
+	@return secret_data   : extracted secret information
+	"""
+
+	basic = createBasicSeq(ccc, secret_length, tau, ch)
+
+	basic_length  = len(basic)
+	ex_basic_length = es_length = basic_length + tau * (secret_length-1)
+	
+	ex_basic  = list()
+	for d in basic:
+		ex_basic.append(int(d))
+	for i in np.arange(basic_length, ex_basic_length):
+		ex_basic.append(0)
+
+	secret_data = list()
+	for i in np.arange(secret_length):
+		ex = np.roll(ex_basic, i*tau)
+		secret_data.append((es*ex).sum())
+
+	secret_data = list(map(_checkData, secret_data))
+
+	return secret_data
+
 def _checkData(data):
 	if data > 0:
 		return 1
