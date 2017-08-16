@@ -1,4 +1,5 @@
 from VideoDigitalWatermarking.src.ber import *
+from VideoDigitalWatermarking.src.ccc import *
 from VideoDigitalWatermarking.src.dct import *
 from VideoDigitalWatermarking.src.image import *
 from VideoDigitalWatermarking.src.msequence import *
