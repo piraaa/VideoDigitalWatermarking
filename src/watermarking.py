@@ -166,11 +166,6 @@ def extractMseq(cover, stego, secret_length, m, tau=1):
 
 	return secret_data
 
-def embedCCC(ccc, secret):
-	u"""Embed secret informations by spread spectrum using CCC.
-	"""
-	pass
-
 def createBasicSeq(ccc, secret_length, tau=1, ch=1):
 	u"""Create Basic-Sequence using CCC.
 	@param  ccc           : (N,N,N**2)CCC
