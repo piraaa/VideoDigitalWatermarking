@@ -398,6 +398,180 @@ Read "test_embeded.bmp".
 [ 1.  1.  1.  1.  0.  0.  0.  0.]
 ```
 
+### Embed by M-Sequence.
+#### Time domain
+
+```python=embed_m_time.py
+#
+# embed_m_time.py
+# Created by pira on 2017/08/15.
+#
+
+#coding: utf-8
+
+from VideoDigitalWatermarking import *
+import numpy as np
+
+fnin  = 'test.bmp'
+fnout = 'test_embeded.bmp'
+
+secret_data = [1,1,1,1,0,0,0]
+
+secret_length = len(secret_data)
+N = math.ceil(math.log2(secret_length+1))
+m = generateM(N)
+
+print('m =', m, '\n')
+
+rgb_data = readColorImage(fnin)
+red_data = getRgbLayer(rgb_data, rgb=RED)
+embeded_red_data = embedMseq(red_data, secret_data, m, a=1, tau=1)
+
+#replace red_data to embeded red_data
+height = red_data.shape[0]
+width  = red_data.shape[1]
+for i in np.arange(height):
+	for j in np.arange(width):
+		rgb_data[i][j][RED] = embeded_red_data[i][j]
+
+writeImage(fnout, rgb_data)
+```
+
+#### Frequency domain
+
+```python=embed_m_freq.py
+#
+# embed_m_freq.py
+# Created by pira on 2017/08/16.
+#
+
+#coding: utf-8
+
+from VideoDigitalWatermarking import *
+import numpy as np
+
+fnin  = 'test.bmp'
+fnout = 'test_embeded.bmp'
+
+secret_data = [1,1,1,1,0,0,0]
+
+secret_length = len(secret_data)
+
+N = math.ceil(math.log2(secret_length+1))
+m = generateM(N)
+
+print('m =', m, '\n')
+
+rgb_data = readColorImage(fnin)
+ycc_data = rgb2ycc(rgb_data)
+y_data   = get_y(ycc_data)
+dct_data = dct_dim2(y_data)
+embeded_dct_y_data = embedMseq(dct_data, secret_data, m, a=100, tau=1)
+embeded_y_data = idct_dim2(embeded_dct_y_data)
+
+#replace y_data to embeded_y_data
+height = ycc_data.shape[0]
+width  = ycc_data.shape[1]
+for i in np.arange(height):
+	for j in np.arange(width):
+		ycc_data[i][j][0] = embeded_y_data[i][j]
+
+embeded_rgb_data = ycc2rgb(ycc_data)
+
+writeImage(fnout, embeded_rgb_data)
+```
+
+```
+m = [1, 1, -1, 1, -1, -1, 1] 
+
+Read "test.bmp".
+Write "test_embeded.bmp".
+```
+
+### Ectract by M-Sequence.
+#### Time domain
+
+```python=extract_m_time.py
+#
+# extract_m_time.py
+# Created by pira on 2017/08/15.
+#
+
+#coding: utf-8
+
+from VideoDigitalWatermarking import *
+
+fn_cover  = 'test.bmp'
+fn_stego = 'test_embeded.bmp'
+
+secret_length = 7 #secret infomation length
+N = math.ceil(math.log2(secret_length+1))
+m = generateM(N)
+
+print('m =', m, '\n')
+
+rgb_cover = readColorImage(fn_cover)
+rgb_stego = readColorImage(fn_stego)
+
+red_cover   = getRgbLayer(rgb_cover, rgb=RED)
+red_stego   = getRgbLayer(rgb_stego, rgb=RED)
+
+secret_data = extractMseq(red_cover, red_stego, secret_length, m, tau=1)
+print(secret_data)
+```
+
+#### Frequency domain
+
+```python=embed_m_freq.py
+#
+# embed_m_freq.py
+# Created by pira on 2017/08/16.
+#
+
+#coding: utf-8
+
+from VideoDigitalWatermarking import *
+import numpy as np
+
+fnin  = 'test.bmp'
+fnout = 'test_embeded.bmp'
+
+secret_data = [1,1,1,1,0,0,0]
+
+secret_length = len(secret_data)
+
+N = math.ceil(math.log2(secret_length+1))
+m = generateM(N)
+
+print('m =', m, '\n')
+
+rgb_data = readColorImage(fnin)
+ycc_data = rgb2ycc(rgb_data)
+y_data   = get_y(ycc_data)
+dct_data = dct_dim2(y_data)
+embeded_dct_y_data = embedMseq(dct_data, secret_data, m, a=100, tau=1)
+embeded_y_data = idct_dim2(embeded_dct_y_data)
+
+#replace y_data to embeded_y_data
+height = ycc_data.shape[0]
+width  = ycc_data.shape[1]
+for i in np.arange(height):
+	for j in np.arange(width):
+		ycc_data[i][j][0] = embeded_y_data[i][j]
+
+embeded_rgb_data = ycc2rgb(ycc_data)
+
+writeImage(fnout, embeded_rgb_data)
+```
+
+```
+m = [1, 1, -1, 1, -1, -1, 1] 
+
+Read "test.bmp".
+Read "test_embeded.bmp".
+[1, 1, 1, 1, 0, 0, 0]
+```
+
 ### Divide video into images.
 
 ```python:divide_video.py
