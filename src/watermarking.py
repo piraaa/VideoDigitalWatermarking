@@ -129,7 +129,7 @@ def embedMseq(cover, secret, m, a=1, tau=1):
 		M.append(np.roll(m,i))
 	M = np.array(M)
 
-	es = secret.dot(M) + secret.sum()
+	es = secret.dot(M)
 	es *= a
 
 	stego = _image2vrctor(cover)
