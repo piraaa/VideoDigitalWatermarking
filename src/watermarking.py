@@ -141,6 +141,37 @@ def embedMseq(cover, secret, m, a=1, tau=1):
 
 	return stego
 
+def extractMseq(cover, stego, secret_length, m, tau=1):
+	u"""Extract secret informations by spread spectrum using m-sequence.
+	@param  cover         : cover data (2 dimensional np.ndarray)
+	@param  stego         : stego data (2 dimension np.ndarray)
+	@param  secret_length : length of secret information
+	@param  m             : M-Sequence
+	@param  tau           : embed shift interval
+	@return secret        : extracted secret information
+	"""
+
+	cover = _image2vrctor(cover)
+	stego = _image2vrctor(stego)
+
+	m_length = len(m)
+
+	data = stego - cover
+	data = data[:m_length:tau]
+
+	secret_data = correlate(m, data, cycle=CYCLE)
+	center = ((m_length-1)*2+1)//2
+	secret_data = secret_data[center:center+secret_length]
+	secret_data = list(map(_checkMseq, secret_data))
+
+	return secret_data
+
+def _checkMseq(data):
+	if data > 0:
+		return 1
+	elif data < 0:
+		return 0
+
 def _image2vrctor(img):
 	u"""Convert image to vector.
 	@param  img   :2 dimension image data
