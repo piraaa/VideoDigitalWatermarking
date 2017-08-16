@@ -69,12 +69,6 @@ def extractBitReplace(cover, stego, secret_length, bit=1, interval=0):
 	return secret_data
 
 def _addBitReplace(cover, secret, bit=1):
-	u"""Embed 1 bit secret information by changing LSB.
-	@param  cover  : 1 pixel cover data
-	@param  secret : i bit secret information
-	@param  bit    : number of replaced bit
-	@return stego  : 1 pixel srego data
-	"""
 	stego = int(round(cover))
 	stego = format(stego, '08b')
 	stego = stego[::-1]
@@ -95,11 +89,6 @@ def _addBitReplace(cover, secret, bit=1):
 	return stego
 
 def _checkBitReplace(data, bit=1):
-	u"""Extract 1 bit secret information by chacking LSB.
-	@param  data   : stego data
-	@param  bit    : number of replaced bit
-	@return secret : 1 bit secret information
-	"""
 	data = int(round(data))
 	data = format(data, '08b')
 	data = data[::-1]
