@@ -28,6 +28,14 @@ src.dct module
     :undoc-members:
     :show-inheritance:
 
+src.docstring module
+--------------------
+
+.. automodule:: src.docstring
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 src.esequence module
 --------------------
 
@@ -56,6 +64,14 @@ src.psnr module
 ---------------
 
 .. automodule:: src.psnr
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+src.secret module
+-----------------
+
+.. automodule:: src.secret
     :members:
     :undoc-members:
     :show-inheritance:
