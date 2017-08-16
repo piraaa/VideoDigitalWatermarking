@@ -245,10 +245,6 @@ def _checkData(data):
 		return 0
 
 def _image2vrctor(img):
-	u"""Convert image to vector.
-	@param  img   : 2 dimension image data
-	@return vector: 1 dimension image data
-	"""
 	height = img.shape[0]
 	width  = img.shape[1]
 	len = height * width
@@ -259,10 +255,6 @@ def _image2vrctor(img):
 	return vector
 
 def _vector2image(vector, height, width):
-	u"""Convert vector to image.
-	@param  vector: 1 dimension image data
-	@return image : 2 dimension image data
-	"""
 	image = np.empty([height, width])
 	for i in np.arange(height):
 		for j in np.arange(width):
