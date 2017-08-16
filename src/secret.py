@@ -11,7 +11,7 @@ import numpy as np
 
 def generateSecret(n):
 	u"""Generate 0 or 1 random secret information for simulation.
-	@param  n : length
+	@param  n      : length
 	@return secret : secret information list
 	"""
 	secret = np.random.randint(2, size =n)
