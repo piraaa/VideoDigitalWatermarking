@@ -9,9 +9,6 @@ u"""For video processing."""
 import numpy as np
 import cv2
 
-def showVideo(filename):
-	pass
-
 def video2image(filename, n=0): 
 	u"""Read mpeg video and divide into jpeg images.
 	@param  filename:video filename
@@ -43,9 +40,6 @@ def video2image(filename, n=0):
 
 	print('Export', count, 'jpeg Images.')
 	return count
-
-def image2video():
-	pass
 
 #filename = 'test.mov'
 #n = video2image(filename, )
