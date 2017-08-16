@@ -572,6 +572,52 @@ Read "test_embeded.bmp".
 [1, 1, 1, 1, 0, 0, 0]
 ```
 
+### Embed and Extract by CCC.
+
+```python=embed_ccc.py
+#
+# embed_ccc.py
+# Created by pira on 2017/08/14.
+#
+
+#coding: utf-8
+
+from VideoDigitalWatermarking import *
+
+secret_data = [1,1,1,1,0,0,0,0]
+secret_length = len(secret_data)
+
+print('CCC')
+ccc = generateCCC(2)
+print(ccc, '\n')
+
+#Embed
+basic = createBasicSeq(ccc, secret_length, tau=1)
+print('basic = ', basic, '\n')
+
+es = createEmbedSeq(basic, secret_data, a=1, tau=1)
+print('Embed Sequence =', es, '\n')
+
+#Extract
+secret = extractCCC(ccc, es, secret_length, tau=1, ch=1)
+print('secret =', secret)
+```
+
+```
+CCC
+[[[ 1.  1. -1.  1.]
+  [-1.  1.  1.  1.]]
+
+ [[ 1.  1.  1. -1.]
+  [-1.  1. -1. -1.]]] 
+
+basic =  [1. 1. -1. 1. 0. 0. 0. 0. 0. 0. 0. -1. 1. 1. 1. 0. 0. 0. 0. 0. 0. 0.] 
+
+Embed Sequence = [ 1  2  1  2  0 -2  0 -2 -1  0 -1 -1  0  1  2  4  2  0 -2 -3 -2 -1  0  0  0  0  0  0  0] 
+
+secret = [1, 1, 1, 1, 0, 0, 0, 0]
+```
+
 ### Divide video into images.
 
 ```python:divide_video.py
