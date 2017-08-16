@@ -1,6 +1,4 @@
 # VideoDigitalWatermarking
-(While editing)
-
 Basic watermarking libraries for images and videos with python 3.  
 
 python3で画像・動画の電子透かしを行うための基本的なライブラリです．  
