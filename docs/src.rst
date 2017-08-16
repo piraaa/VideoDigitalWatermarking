@@ -28,22 +28,6 @@ src.dct module
     :undoc-members:
     :show-inheritance:
 
-src.docstring module
---------------------
-
-.. automodule:: src.docstring
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-src.esequence module
---------------------
-
-.. automodule:: src.esequence
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 src.image module
 ----------------
 
