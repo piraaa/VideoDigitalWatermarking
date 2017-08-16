@@ -6,7 +6,6 @@
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
-import numpy as np
 
 fnin  = 'test.bmp'
 fnout = 'test_embeded.bmp'
