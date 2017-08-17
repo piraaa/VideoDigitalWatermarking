@@ -175,7 +175,7 @@ Read mpeg video and divide into jpeg images.
 Calculate correlate function.  
 @param  data1     : data1  
 @param  data2     : data2  
-@param  cycle     : CYCLE or NON_SYCLE (Default is NON_CYCLE)  
+@param  cycle     : CYCLE or NON_CYCLE (Default is NON_CYCLE)  
 @return correlate : correlate list  
 
 * <strong>createBasicSeq(ccc, secret_length, tau=1, ch=1)</strong>

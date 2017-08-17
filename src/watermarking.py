@@ -286,7 +286,7 @@ def correlate(data1, data2, cycle=NON_CYCLE):
 	u"""Calculate correlate function.
 	@param  data1     : data1
 	@param  data2     : data2
-	@param  cycle     : CYCLE or NON_SYCLE (Default is NON_CYCLE)
+	@param  cycle     : CYCLE or NON_CYCLE (Default is NON_CYCLE)
 	@return correlate : correlate list
 	"""
 	if cycle == NON_CYCLE:
