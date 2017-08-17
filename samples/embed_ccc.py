@@ -15,7 +15,7 @@ ccc = generateCCC(2)
 print(ccc, '\n')
 
 #Embed
-basic = createBasicSeq(ccc, secret_length, tau=1)
+basic = createBasicSeq(ccc, secret_length, tau=1, ch=1)
 print('basic = ', basic, '\n')
 
 es = createEmbedSeq(basic, secret_data, a=1, tau=1)
