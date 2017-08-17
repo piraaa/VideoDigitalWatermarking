@@ -7,6 +7,7 @@
 
 from VideoDigitalWatermarking import *
 import numpy as np
+import math
 
 fnin  = 'test.bmp'
 fnout = 'test_embeded.bmp'

@@ -6,6 +6,7 @@
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
+import math
 
 fn_cover  = 'test.bmp'
 fn_stego = 'test_embeded.bmp'
