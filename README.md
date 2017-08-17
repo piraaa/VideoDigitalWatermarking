@@ -461,6 +461,7 @@ Embed secret information by spectrum spread using M-Sequence.
 
 from VideoDigitalWatermarking import *
 import numpy as np
+import math
 
 fnin  = 'test.bmp'
 fnout = 'test_embeded.bmp'
@@ -499,6 +500,7 @@ writeImage(fnout, rgb_data)
 
 from VideoDigitalWatermarking import *
 import numpy as np
+import math
 
 fnin  = 'test.bmp'
 fnout = 'test_embeded.bmp'
@@ -552,6 +554,7 @@ Extract secret information by spectrum spread using M-Sequence.
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
+import math
 
 fn_cover  = 'test.bmp'
 fn_stego = 'test_embeded.bmp'
@@ -574,46 +577,40 @@ print(secret_data)
 
 #### Frequency domain
 
-```python=embed_m_freq.py
+```python=extract_m_freq.py
 #
-# embed_m_freq.py
+# extract_m_freq.py
 # Created by pira on 2017/08/16.
 #
 
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
-import numpy as np
+import math
 
-fnin  = 'test.bmp'
-fnout = 'test_embeded.bmp'
 
-secret_data = [1,1,1,1,0,0,0]
+fn_cover  = 'test.bmp'
+fn_stego  = 'test_embeded.bmp'
 
-secret_length = len(secret_data)
+secret_length = 7 #secret infomation length
 
 N = math.ceil(math.log2(secret_length+1))
 m = generateM(N)
 
 print('m =', m, '\n')
 
-rgb_data = readColorImage(fnin)
-ycc_data = rgb2ycc(rgb_data)
-y_data   = get_y(ycc_data)
-dct_data = dct_dim2(y_data)
-embeded_dct_y_data = embedMseq(dct_data, secret_data, m, a=100, tau=1)
-embeded_y_data = idct_dim2(embeded_dct_y_data)
+rgb_cover = readColorImage(fn_cover)
+rgb_stego = readColorImage(fn_stego)
 
-#replace y_data to embeded_y_data
-height = ycc_data.shape[0]
-width  = ycc_data.shape[1]
-for i in np.arange(height):
-	for j in np.arange(width):
-		ycc_data[i][j][0] = embeded_y_data[i][j]
+ycc_cover = rgb2ycc(rgb_cover)
+ycc_stego = rgb2ycc(rgb_stego)
+y_cover   = get_y(ycc_cover)
+y_stego   = get_y(ycc_stego)
+dct_cover = dct_dim2(y_cover)
+dct_stego = dct_dim2(y_stego)
 
-embeded_rgb_data = ycc2rgb(ycc_data)
-
-writeImage(fnout, embeded_rgb_data)
+secret_data = extractMseq(dct_cover, dct_stego, secret_length, m, tau=1)
+print(secret_data)
 ```
 
 ```
