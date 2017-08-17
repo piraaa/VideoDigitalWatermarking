@@ -3,7 +3,7 @@ Basic watermarking libraries for images and videos with python 3.
 
 python3で画像・動画の電子透かしを行うための基本的なライブラリです．  
 
-(Edited on 2017/08/16)
+(Edited on 2017/08/17)
 
 ## このライブラリでできること
 * 画像・動画の入出力  
