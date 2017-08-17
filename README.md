@@ -294,7 +294,7 @@ Convert 0 to -1.
 @return minus_data : secret information represented by -1 and 1  
 </details>
 
-#### For more information, please install this library and refer to "VideoDigitalWatermarking/html/index.html" with your browser.
+For more information, please install this library and refer to "VideoDigitalWatermarking/html/index.html" with your browser.
 
 ## Samples
 Some program samples.  
