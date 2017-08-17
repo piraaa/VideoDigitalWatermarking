@@ -709,7 +709,7 @@ CYCLE     = [-1 -1  3 -1 -1]
 NON CYCLE = [ 1 -2  3 -2  1]
 ```
 
-### Calculate Bit Error Rate.
+### BER
 Calculate Bit Error Rate.
 
 
@@ -733,7 +733,7 @@ print('BER =', ber, '[%]')
 BER = 50.0 [%]
 ```
 
-### Calculate PSNR.
+### PSNR
 Calculate Peak Signal-to-Noise Ratio.
 
 ```python=PSNR.py
