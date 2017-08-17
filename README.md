@@ -401,6 +401,9 @@ Read "test_embeded.bmp".
 ```
 
 ### Embed by M-Sequence.
+Embed secret information by spectrum spread using M-Sequence.  
+(But mow, you can only use τ=1. I am fixing this.)  
+
 #### Time domain
 
 ```python=embed_m_time.py
@@ -491,6 +494,8 @@ Write "test_embeded.bmp".
 ```
 
 ### Ectract by M-Sequence.
+Extract secret information by spectrum spread using M-Sequence.
+
 #### Time domain
 
 ```python=extract_m_time.py
@@ -575,6 +580,7 @@ Read "test_embeded.bmp".
 ```
 
 ### Embed and Extract by CCC.
+Embed and Extract secret information by spectrum spread using Complete Complementary Code.  
 
 ```python=embed_ccc.py
 #
@@ -621,6 +627,7 @@ secret = [1, 1, 1, 1, 0, 0, 0, 0]
 ```
 
 ### Divide video into images.
+You can input a video and output each frames as images.  
 
 ```python:divide_video.py
 # 
@@ -647,6 +654,7 @@ Export 5 jpeg Images.
 ```
 
 ### Divide image into blocks.
+You can input an image and divide it into blocks.  
 
 ```python:divide_image_into_blocks.py
 #
@@ -702,6 +710,8 @@ NON CYCLE = [ 1 -2  3 -2  1]
 ```
 
 ### Calculate Bit Error Rate.
+Calculate Bit Error Rate.
+
 
 ```python=BER.py
 #
@@ -724,6 +734,7 @@ BER = 50.0 [%]
 ```
 
 ### Calculate PSNR.
+Calculate Peak Signal-to-Noise Ratio.
 
 ```python=PSNR.py
 #
