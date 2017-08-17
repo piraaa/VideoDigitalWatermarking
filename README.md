@@ -23,7 +23,7 @@ It is a simple method, but it is vulnerable to attack.
 
 * Digital watermark using frequency domain  
 You can embed secret information in the frequency domain of the image using DCT transformation.  
-It is difficult to recognize color changes in the frequency domain than in the time domain.  
+It is difficult to recognize changes in the frequency domain than in the time domain.  
 * Digital watermark using spread spectrum  
 You can embed secret information using correlation properties of spread spectrum sequence.  
 It spreads the secret information in a wide band, so it is not affected by noise.  
@@ -53,7 +53,7 @@ bmp，png，jpg，mp4，aviなどの画像や動画の入力と出力ができ�
 
 * 周波数領域利用型の電子透かし  
 DCT変換を使用して，画像の周波数領域に秘密情報を埋め込みます．  
-周波数領域の色の変化を認識することは，時間領域よりも難しいです．
+周波数領域の変化を認識することは，時間領域よりも難しいです．
 
 * スペクトル拡散を利用した電子透かし  
 スペクトル拡散系列の相関特性を利用して秘密情報を埋め込みます．  
