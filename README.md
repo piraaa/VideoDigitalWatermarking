@@ -8,10 +8,10 @@ python3で画像・動画の電子透かしを行うための基本的なライ�
 ## Description
 You can do following things by using this library.
 
-* Input/Output of images and videos
+* Input/Output of images and videos  
 You can input and output images or movies such as bmp, png, jpg, mp4, avi and so on.  
 
-* Split images and videos
+* Split images and videos  
 You can divide the image into blocks.  
 Also, you can divide video into frames as image.  
 
@@ -21,16 +21,16 @@ You can embed and extract secret information by bit replace method.
 Humans can not recognize low bit changes.  
 It is a simple method, but it is vulnerable to attack.  
 
-* Digital watermark using frequency domain
+* Digital watermark using frequency domain  
 You can embed secret information in the frequency domain of the image using DCT transformation.  
 It is difficult to recognize color changes in the frequency domain than in the time domain.  
-* Digital watermark using spread spectrum
+* Digital watermark using spread spectrum  
 You can embed secret information using correlation properties of spread spectrum sequence.  
 It spreads the secret information in a wide band, so it is not affected by noise.  
 The spread sequence is the secret key.  
 You can use M-Sequence and CCC in this library.  
 
-* Calculate BER or PSNR
+* Calculate BER or PSNR  
 You can calculate BER or PSNR.  
 These values evaluate the performance of digital watermark.  
 
@@ -38,30 +38,30 @@ These values evaluate the performance of digital watermark.
 
 このライブラリを使用すると以下のことができます．
 
-* 画像と動画の入出力
+* 画像と動画の入出力  
 bmp，png，jpg，mp4，aviなどの画像や動画の入力と出力ができます．  
 
-* 画像と動画の分割
+* 画像と動画の分割  
 画像をブロックに分割することができます．  
 また，動画の各フレームを画像に分けることができます．  
 
-* ビット置換法による電子透かし
+* ビット置換法による電子透かし  
 ビット置換法は画像の画素を変更します．  
 ビット置換法による秘密情報の埋め込みと抽出ができます  
 人間は低いビットの変化を認識できません．  
 これはシンプルな手法ですが，攻撃に対して脆弱です．  
 
-* 周波数領域利用型の電子透かし
+* 周波数領域利用型の電子透かし  
 DCT変換を使用して，画像の周波数領域に秘密情報を埋め込みます．  
 周波数領域の色の変化を認識することは，時間領域よりも難しいです．
 
-* スペクトル拡散を利用した電子透かし
+* スペクトル拡散を利用した電子透かし  
 スペクトル拡散系列の相関特性を利用して秘密情報を埋め込みます．  
 広帯域に情報を拡散するため，ノイズの影響を受けにくいです．  
 スペクトル拡散系列は秘密鍵になります．  
 このライブラリでは，M系列と完全相補系列を使用することができます．  
 
-* BERやPSNRの計算
+* BERやPSNRの計算  
 BERやPSNRの計算ができます．  
 これらの値は電子透かしの性能を評価します．  
 
