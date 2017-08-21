@@ -3,7 +3,7 @@ Basic watermarking libraries for images and videos with python 3.
 
 python3で画像・動画の電子透かしを行うための基本的なライブラリです．  
 
-(Edited on 2017/08/17)
+(Edited on 2017/08/21)
 
 ## Description
 You can do following things by using this library.
@@ -306,11 +306,6 @@ Some program samples.
 Change the bit of the red layer in the time domain by the bit replace method. We use the LSB to minimize the effect on the image.  
 
 ```python:embed_in_time.py
-# 
-# embed_in_time.py
-# Created by pira on 2017/08/09.
-#
-
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
@@ -338,11 +333,6 @@ writeImage(fnout, rgb_data)
 Extract secret information from the LSB of the red layer in the time domain.  
 
 ```python:extract_from_time.py
-#
-# extract_from_time.py
-# Created by pira on 2017/08/09.
-#
-
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
@@ -370,11 +360,6 @@ Read "test_embeded.bmp".
 Change the any bit of the Y layer in the frequency domain by the bit replace method. We use the high bit to avoid the "quantization error".  
 
 ```python:embed_in_freq.py
-# 
-# embed_in_freq.py
-# Created by pira on 2017/08/01.
-#
-
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
@@ -409,11 +394,6 @@ writeImage(fnout, embeded_rgb_data)
 Extract secret information from the any bit of the Y layer in the frequency domain.  
 
 ```python:extract_from_freq.py
-#
-# extract_from_freq.py
-# Created by pira on 2017/08/04.
-#
-
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
@@ -452,11 +432,6 @@ Embed secret information by spectrum spread using M-Sequence.
 #### Time domain
 
 ```python=embed_m_time.py
-#
-# embed_m_time.py
-# Created by pira on 2017/08/15.
-#
-
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
@@ -491,11 +466,6 @@ writeImage(fnout, rgb_data)
 #### Frequency domain
 
 ```python=embed_m_freq.py
-#
-# embed_m_freq.py
-# Created by pira on 2017/08/16.
-#
-
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
@@ -546,11 +516,6 @@ Extract secret information by spectrum spread using M-Sequence.
 #### Time domain
 
 ```python=extract_m_time.py
-#
-# extract_m_time.py
-# Created by pira on 2017/08/15.
-#
-
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
@@ -578,11 +543,6 @@ print(secret_data)
 #### Frequency domain
 
 ```python=extract_m_freq.py
-#
-# extract_m_freq.py
-# Created by pira on 2017/08/16.
-#
-
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
@@ -625,11 +585,6 @@ Read "test_embeded.bmp".
 Embed and Extract secret information by spectrum spread using Complete Complementary Code.  
 
 ```python=embed_ccc.py
-#
-# embed_ccc.py
-# Created by pira on 2017/08/14.
-#
-
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
@@ -672,11 +627,6 @@ secret = [1, 1, 1, 1, 0, 0, 0, 0]
 You can input a video and output each frames as images.  
 
 ```python:divide_video.py
-# 
-# divide_video.py
-# Created by pira on 2017/08/07.
-#
-
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
@@ -698,11 +648,6 @@ Export 5 jpeg Images.
 You can input an image and divide it into blocks.  
 
 ```python:divide_image_into_blocks.py
-#
-# divide_image_into_blocks.py
-# Created by pira on 2017/08/15.
-#
-
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
@@ -725,11 +670,6 @@ for i in np.arange(blocks.shape[0]):
 Calculate correlate function.
 
 ```python=correlate.py
-#
-# correlate.py
-# Created by pira on 2017/08/15.
-#
-
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
@@ -755,11 +695,6 @@ Calculate Bit Error Rate.
 
 
 ```python=BER.py
-#
-# BER.py
-# Created by pira on 2017/08/15.
-#
-
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
@@ -778,11 +713,6 @@ BER = 50.0 [%]
 Calculate Peak Signal-to-Noise Ratio.
 
 ```python=PSNR.py
-#
-# PSNR.py
-# Created by pira on 2017/08/15.
-#
-
 #coding: utf-8
 
 from VideoDigitalWatermarking import *
