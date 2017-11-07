@@ -111,7 +111,6 @@ def grayblock2image(blocks):
 		col_block = np.empty((block_height,0), int)
 		for block in x:
 			col_block = np.concatenate([col_block, block], axis=1)
-		writeImage('a.bmp',col_block)
 		image = np.concatenate([image, col_block], axis=0)
 		print(image.shape)
 
