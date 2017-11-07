@@ -3,7 +3,7 @@ Basic watermarking libraries for images and videos with python 3.
 
 python3で画像・動画の電子透かしを行うための基本的なライブラリです．  
 
-(Edited on 2017/08/21)
+(Edited on 2017/11/08)
 
 ## Description
 You can do following things by using this library.
@@ -747,3 +747,8 @@ Sphinx is a documentation tool for Python.
 HTML documents in this library were created using Sphinx.  
 * [Sphinx](http://www.sphinx-doc.org/ja/stable/#) - Sphinx HP
 * [#sphinxjp](http://sphinx-users.jp/index.html#) - Sphinx users community
+
+## Update
+2017/11/08
+* GrayScale画像をブロックから画像に戻す関数の追加（修正）．
+* 周波数領域利用型電子透かしにおいて，画像2次元配列を1次元配列に変換するときに正しく周波数の低い順に並ばない不具合発見．今度修正予定．

@@ -98,6 +98,25 @@ def grayimage2block(img, size):
 
 	return blocks
 
+def grayblock2image(blocks):
+	u"""Convert the blocks to a gray image..
+	@param  blocks : a 4 dimension gray image such as np.ndarray[block_y][block_x][block_height][block_width]
+	@return image  : an image array.
+	"""
+	block_y, block_x, block_height, block_width = blocks.shape
+	
+	image = np.empty((0,block_x*block_width), int)
+
+	for x in blocks:
+		col_block = np.empty((block_height,0), int)
+		for block in x:
+			col_block = np.concatenate([col_block, block], axis=1)
+		writeImage('a.bmp',col_block)
+		image = np.concatenate([image, col_block], axis=0)
+		print(image.shape)
+
+	return image
+
 def colorimage2block(img, size):
 	u"""Divide color image into blocks.
 	@param  img    : a 3 dimension image like a np.array[height][width][BGR]
