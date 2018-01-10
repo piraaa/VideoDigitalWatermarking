@@ -20,10 +20,10 @@ def calcPSNR(cover, stego):
 	"""
 
 	#if cover and stego are RGB color images:
-	if cover.shape[2] == stego.shape[2] == 3:
+	if np.ndim(cover) == np.ndim(stego) == 3:
 		layer_num = 3 
 	#elif cover and stego are gray images:
-	elif cover.shape[2] == stego.shape[2] == 1:
+	elif np.ndim(cover) == np.ndim(stego) == 2:
 		layer_num = 1
 	else:
 		print('Please give an appropriate images.')
@@ -41,7 +41,7 @@ def calcPSNR(cover, stego):
 	if mse == 0:
 		return float('-inf')
 
-	psnr = 10 * (math.log10(p) - math.log10(mse))
+	psnr = 10 * (math.log10(p**2) - math.log10(mse))
 
 	return psnr
 
